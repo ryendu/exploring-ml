@@ -30,6 +30,14 @@
 		9C9F0E9F26150912002D0578 /* earth night_lights_modified.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */; };
 		9C9F0EA026150912002D0578 /* earth bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9B26150912002D0578 /* earth bump.jpg */; };
 		9C9F0EA126150912002D0578 /* clouds earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9C26150912002D0578 /* clouds earth.png */; };
+		9CD41655261661E3003DF8B5 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
+		9CD41656261661E3003DF8B5 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
+		9CD41657261661E3003DF8B5 /* earth albedo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9826150912002D0578 /* earth albedo.jpg */; };
+		9CD41658261661E3003DF8B5 /* earth land ocean mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9926150912002D0578 /* earth land ocean mask.png */; };
+		9CD41659261661E3003DF8B5 /* earth night_lights_modified.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */; };
+		9CD4165A261661E3003DF8B5 /* earth bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9B26150912002D0578 /* earth bump.jpg */; };
+		9CD4165B261661E3003DF8B5 /* clouds earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9C26150912002D0578 /* clouds earth.png */; };
+		9CD4165C261661E3003DF8B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E551EC42371FC3F00784365 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -90,6 +98,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5EF2F9AA2054BBF300191409;
 			remoteInfo = Book_Sources;
+		};
+		9CD4166B2616621C003DF8B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E6F7E602368FB6A008CC191;
+			remoteInfo = BookAPI;
+		};
+		9CD4166D2616621C003DF8B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EF2F9AA2054BBF300191409;
+			remoteInfo = BookCore;
+		};
+		9CD4166F2616621C003DF8B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C16612A26142BE9004622CF;
+			remoteInfo = Views;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -552,6 +581,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				9CD4166C2616621C003DF8B5 /* PBXTargetDependency */,
+				9CD4166E2616621C003DF8B5 /* PBXTargetDependency */,
+				9CD416702616621C003DF8B5 /* PBXTargetDependency */,
 			);
 			name = Scenes;
 			productName = Scenes;
@@ -632,6 +664,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD41655261661E3003DF8B5 /* ManifestPlist.strings in Resources */,
+				9CD41656261661E3003DF8B5 /* LiveView.storyboard in Resources */,
+				9CD41657261661E3003DF8B5 /* earth albedo.jpg in Resources */,
+				9CD41658261661E3003DF8B5 /* earth land ocean mask.png in Resources */,
+				9CD41659261661E3003DF8B5 /* earth night_lights_modified.png in Resources */,
+				9CD4165A261661E3003DF8B5 /* earth bump.jpg in Resources */,
+				9CD4165B261661E3003DF8B5 /* clouds earth.png in Resources */,
+				9CD4165C261661E3003DF8B5 /* Assets.xcassets in Resources */,
 				5EA2E3CA2056F35B00416A35 /* LiveViewTestAppLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +771,21 @@
 			isa = PBXTargetDependency;
 			target = 5EF2F9AA2054BBF300191409 /* BookCore */;
 			targetProxy = 5EF2F9B42054BDD100191409 /* PBXContainerItemProxy */;
+		};
+		9CD4166C2616621C003DF8B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E6F7E602368FB6A008CC191 /* BookAPI */;
+			targetProxy = 9CD4166B2616621C003DF8B5 /* PBXContainerItemProxy */;
+		};
+		9CD4166E2616621C003DF8B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EF2F9AA2054BBF300191409 /* BookCore */;
+			targetProxy = 9CD4166D2616621C003DF8B5 /* PBXContainerItemProxy */;
+		};
+		9CD416702616621C003DF8B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C16612A26142BE9004622CF /* Views */;
+			targetProxy = 9CD4166F2616621C003DF8B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

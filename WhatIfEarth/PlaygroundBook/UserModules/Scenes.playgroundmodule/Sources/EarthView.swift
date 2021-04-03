@@ -15,7 +15,6 @@ import SceneKit.ModelIO
 /// a swiftui view that displays a spinning 3D earth with Scene Kit
 public struct EarthSpinningView : UIViewRepresentable {
     public let scene = SCNScene()
-    
     var spinRate:Double
     public init(spinRate:Double) {
         self.spinRate = spinRate
@@ -44,9 +43,20 @@ public struct EarthSpinningView : UIViewRepresentable {
         earthGeo.firstMaterial?.emission.contents = UIImage(named: "earth night_lights_modified")
         earthGeo.firstMaterial?.ambient.contents = UIImage(named: "clouds earth")!
         let earth = SCNNode(geometry: earthGeo)
+        
+        let buldge = CABasicAnimation(keyPath: "scale")
+        let buldgeAmount:Float = self.spinRate == 1 ? 1 : 1.1
+        buldge.fromValue = NSValue(scnVector3: SCNVector3(x: 1, y: 1, z: 1))
+        buldge.toValue = NSValue(scnVector3: SCNVector3(x: buldgeAmount, y: 1, z: buldgeAmount))
+        buldge.duration = 1
+        buldge.repeatCount = 1
+        earth.addAnimation(buldge, forKey: "buldge")
+        earth.scale.x = buldgeAmount
+        earth.scale.z = buldgeAmount
         scene.rootNode.addChildNode(earth)
         
-        earth.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: CGFloat(Int(self.spinRate.rounded())), z: 0, duration: 5)))
+        
+        earth.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: CGFloat(Int(self.spinRate.rounded())), z: 0, duration: 7)))
 
         let scnView = SCNView()
         return scnView

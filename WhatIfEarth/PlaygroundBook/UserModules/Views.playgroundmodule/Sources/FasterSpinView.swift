@@ -19,6 +19,7 @@ public struct FasterSpinView: View {
         VStack{
             FasterSpinInfoView(spinRate: spinRate).padding()
             EarthSpinningView(spinRate: spinRate)
+            
         }
     }
 }
@@ -31,32 +32,54 @@ private struct FasterSpinInfoView: View{
     var body: some View {
         VStack{
             HStack{
-                Text("Info Panel").font(.headline).padding()
+                Text("Info Panel").font(.largeTitle).padding()
                 Spacer()
             }
             Divider()
             HStack{
-                Text("The weight of an 150 lb person at the equator: \(15)lb")
+                // To calculate the Centrifigual Force, we can use the equation **F = mω^2 R cosθ** where *F* is the net Centrifigual Force, *m* is the mass of the object, *ω* is the angular velocity, *R* is the radius of earth, and θ is the latitude. To calculate the weight of a 150 lb / 68 kg person standing on the equator of earth, we first have to calculate the angular velocity of earth. To calculate the angular velocity, we have to use the equation **ω = 2π/T** where T is time. Where the time period is 24 hours. **ω = 2(3.14)/(24 * 60 * 60) = 0.00007268**. Now we can plug in all the variables into the original equation to calculate the Centrifigual Force of a 150 lb / 68 kg person standing on the equator of earth. **F = 68kg * 0.00007268^2 * 6400000m * cos(0°) = 2.2989 Newtons**. The about 2 Newtons of force counteracting gravity for a 150 lb / 68 Kg person standing on the equator is barley noticable compared to the force of gravity for them which is about 667 Newtons.
+                if self.spinRate != 1{
+                Text("The weight of an 150 lb / 68 kg person at the equator: \(calculateWeightOnEquatorMinusCentrifigualForce(originalWeight: 68.0, spinRate: self.spinRate) * 2.2)lbs / \(calculateWeightOnEquatorMinusCentrifigualForce(originalWeight: 68.0, spinRate: self.spinRate))kg")
+                }else {
+                    Text("The weight of an 150 lb / 68 kg person at the equator: 150 lb / 68 kg")
+                }
                 Spacer()
             }
             HStack{
-                Text("Earth's rotational speed at the equator: \(15)")
+                Text("Earth's rotational speed at the equator: \(1670 * spinRate) kph / \(1038 * spinRate) mph")
                 Spacer()
             }
             HStack{
-                Text("Length of a day: \(15)")
-                Spacer
+                Text("Length of a day: \(secondsToHours(seconds: lengthOfDay(spinRate: spinRate))) hours")
+                Spacer()
             }
                 // The weight of an 150 lb person
                 // earth's speed at the equator
                 // Length of a day
+            
             if self.spinRate > 1 {
                 HStack{
-                    Text("Earth's rotation will cause more wind and hurricanes and cyclones and more water at the equator ")
+                    Text("The centrifigual forces caused by Earth's new rotation will also cause stronger winds, cause earth to buldge a bit on the equator and pull more water from the poles to the equator, flooding most costal cities near the equator.")
+                    Spacer()
                 }
             }
         }
     }
+}
+func calculateWeightOnEquatorMinusCentrifigualForce(originalWeight: Double, spinRate:Double) -> Double {
+    //F = mω^2 R cosθ
+    let ω:Double = 2*3.14/(lengthOfDay(spinRate: spinRate))
+    let radiusMeters = 6400000.0
+    let F = originalWeight * (ω * ω) * radiusMeters
+    return originalWeight - F
+}
+
+func lengthOfDay(spinRate:Double)->Double{
+    return 86400 / spinRate
+}
+
+func secondsToHours(seconds:Double)->Double{
+    return seconds / 3600
 }
 
 ///Instantiates a live view with any view
