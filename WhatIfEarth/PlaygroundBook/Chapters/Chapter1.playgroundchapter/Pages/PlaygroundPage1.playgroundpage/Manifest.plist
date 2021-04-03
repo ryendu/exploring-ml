@@ -3,11 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>ChapterOneName</string>
-	<key>Pages</key>
-	<array>
-		<string>PlaygroundPage1.playgroundpage</string>
-		<string>PlaygroundPage2.playgroundpage</string>
-	</array>
+	<string>What If The Earth Spun Faster?</string>
+	<key>LiveViewEdgeToEdge</key>
+	<true/>
+	<key>LiveViewMode</key>
+	<string>VisibleByDefault</string>
 </dict>
 </plist>
