@@ -246,6 +246,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CB1CA5A26192BFC00574668 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -310,6 +317,7 @@
 				5E1004BD208E7F6E00BCFE70 /* LICENSE */,
 				5EA2E3D52056F83400416A35 /* Supporting Content */,
 				5E086DA4204F706E004D8D25 /* Products */,
+				9CB1CA5B26192C0300574668 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -476,6 +484,13 @@
 			path = earth_textures;
 			sourceTree = "<group>";
 		};
+		9CB1CA5B26192C0300574668 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +500,7 @@
 			buildPhases = (
 				5E086DD22051E35D004D8D25 /* Copy Book Contents */,
 				5E086DC62051DB17004D8D25 /* Resources */,
+				9CB1CA5A26192BFC00574668 /* Frameworks */,
 			);
 			buildRules = (
 				5E086DD42051E415004D8D25 /* PBXBuildRule */,
@@ -494,6 +510,8 @@
 				5E6F7E6F2368FD7C008CC191 /* PBXTargetDependency */,
 			);
 			name = PlaygroundBook;
+			packageProductDependencies = (
+			);
 			productName = PlaygroundBook;
 			productReference = 5E086DC02051C5A7004D8D25 /* What If.playgroundbook */;
 			productType = "com.apple.product-type.bundle";
@@ -630,6 +648,8 @@
 				Base,
 			);
 			mainGroup = 5E2A7ADC204F611300F4E17A;
+			packageReferences = (
+			);
 			productRefGroup = 5E086DA4204F706E004D8D25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -823,6 +843,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "$(PLAYGROUND_BOOK_CONTENT_VERSION)";
+				DEVELOPMENT_TEAM = CUA3BVMUR5;
 				GCC_DYNAMIC_NO_PIC = NO;
 				INSTALL_PATH = /;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryandu.what-if";
@@ -839,6 +860,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "$(PLAYGROUND_BOOK_CONTENT_VERSION)";
+				DEVELOPMENT_TEAM = CUA3BVMUR5;
 				INSTALL_PATH = /;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryandu.what-if";
 				PRODUCT_NAME = "$(PLAYGROUND_BOOK_FILE_NAME)";

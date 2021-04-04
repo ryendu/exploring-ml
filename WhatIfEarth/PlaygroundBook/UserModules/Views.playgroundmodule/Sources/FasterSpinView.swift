@@ -86,7 +86,7 @@ func roundToHundreds(_ value:Double)->String{
     return String(round(value * 100) / 100.0)
 }
 
-///Instantiates a live view with any view
+///Instantiates a new live view with Faster Spining Earth View
 public func instantiateFasterSpinLiveView(spinRate: Double) -> FasterSpinView {
     let view = FasterSpinView(spinRate:spinRate)
     PlaygroundPage.current.setLiveView(view)

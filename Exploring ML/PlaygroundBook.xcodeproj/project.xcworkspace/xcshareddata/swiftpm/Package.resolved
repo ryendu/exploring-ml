@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DL4S",
+        "repositoryURL": "https://github.com/palle-k/DL4S.git",
+        "state": {
+          "branch": "master",
+          "revision": "e0d4776b61343ba2d3438fdb50f6cf7e85cc10c0",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
