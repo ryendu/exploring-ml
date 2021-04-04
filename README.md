@@ -1,5 +1,5 @@
-# What If Earth
-*My WWDC 2021 swift student challenge submission showcasing what would happen if a few of the many crazy what if scenerios about earth were true.*
+# What If
+*My WWDC 2021 swift student challenge submission showcasing what would happen if a few fun and wild what if scenerios became true*
 
 
 **Status - In Development**
