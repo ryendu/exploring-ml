@@ -29,7 +29,6 @@
 		9C9F0E9F26150912002D0578 /* earth night_lights_modified.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */; };
 		9C9F0EA026150912002D0578 /* earth bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9B26150912002D0578 /* earth bump.jpg */; };
 		9C9F0EA126150912002D0578 /* clouds earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9C26150912002D0578 /* clouds earth.png */; };
-		9CB1CA4D2619291700574668 /* PerceptronLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1CA4C2619291700574668 /* PerceptronLiveView.swift */; };
 		9CC640FA261A33CE00A1BB60 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6409C261A33CE00A1BB60 /* Random.swift */; };
 		9CC640FB261A33CE00A1BB60 /* Adadelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6409F261A33CE00A1BB60 /* Adadelta.swift */; };
 		9CC640FC261A33CE00A1BB60 /* Adagrad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A0261A33CE00A1BB60 /* Adagrad.swift */; };
@@ -115,6 +114,11 @@
 		9CD14DC9261A819F00CCC861 /* ImageClassificationLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DC8261A819F00CCC861 /* ImageClassificationLiveView.swift */; };
 		9CD14DD2261A821A00CCC861 /* RocketBoosterLandingLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DD1261A821A00CCC861 /* RocketBoosterLandingLiveView.swift */; };
 		9CD14DDB261A824500CCC861 /* MyFacePuzzleLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DDA261A824500CCC861 /* MyFacePuzzleLiveView.swift */; };
+		9CD14E6C261B85E200CCC861 /* NNStructureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14E6B261B85E200CCC861 /* NNStructureScene.swift */; };
+		9CD14E74261BFF1D00CCC861 /* libDL4S.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC64058261949FC00A1BB60 /* libDL4S.a */; };
+		9CD14E77261BFF1D00CCC861 /* libML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCDC62126193EE300CA6C09 /* libML.a */; };
+		9CD14E7A261BFF1D00CCC861 /* libScenes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16615C26142DB4004622CF /* libScenes.a */; };
+		9CD14E7D261BFF1D00CCC861 /* libViews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16612B26142BE9004622CF /* libViews.a */; };
 		9CD41655261661E3003DF8B5 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
 		9CD41656261661E3003DF8B5 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
 		9CD41657261661E3003DF8B5 /* earth albedo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9826150912002D0578 /* earth albedo.jpg */; };
@@ -190,6 +194,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9CC64057261949FC00A1BB60;
 			remoteInfo = DL4S;
+		};
+		9CD14E75261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CC64057261949FC00A1BB60;
+			remoteInfo = DL4S;
+		};
+		9CD14E78261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CCDC62026193EE300CA6C09;
+			remoteInfo = ML;
+		};
+		9CD14E7B261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C16615B26142DB4004622CF;
+			remoteInfo = Scenes;
+		};
+		9CD14E7E261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C16612A26142BE9004622CF;
+			remoteInfo = Views;
 		};
 		9CD4166B2616621C003DF8B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -316,7 +348,6 @@
 		9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth night_lights_modified.png"; sourceTree = "<group>"; };
 		9C9F0E9B26150912002D0578 /* earth bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "earth bump.jpg"; sourceTree = "<group>"; };
 		9C9F0E9C26150912002D0578 /* clouds earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clouds earth.png"; sourceTree = "<group>"; };
-		9CB1CA4C2619291700574668 /* PerceptronLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerceptronLiveView.swift; sourceTree = "<group>"; };
 		9CC64058261949FC00A1BB60 /* libDL4S.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDL4S.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC6409C261A33CE00A1BB60 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		9CC6409F261A33CE00A1BB60 /* Adadelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adadelta.swift; sourceTree = "<group>"; };
@@ -404,6 +435,7 @@
 		9CD14DC8261A819F00CCC861 /* ImageClassificationLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationLiveView.swift; sourceTree = "<group>"; };
 		9CD14DD1261A821A00CCC861 /* RocketBoosterLandingLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketBoosterLandingLiveView.swift; sourceTree = "<group>"; };
 		9CD14DDA261A824500CCC861 /* MyFacePuzzleLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFacePuzzleLiveView.swift; sourceTree = "<group>"; };
+		9CD14E6B261B85E200CCC861 /* NNStructureScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNStructureScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +450,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD14E77261BFF1D00CCC861 /* libML.a in Frameworks */,
+				9CD14E7D261BFF1D00CCC861 /* libViews.a in Frameworks */,
+				9CD14E74261BFF1D00CCC861 /* libDL4S.a in Frameworks */,
+				9CD14E7A261BFF1D00CCC861 /* libScenes.a in Frameworks */,
 				5EA2E3D42056F36800416A35 /* libBookCore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,7 +702,6 @@
 		9C16611C26142B91004622CF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9CB1CA4C2619291700574668 /* PerceptronLiveView.swift */,
 				9CD14DBF261A817B00CCC861 /* NNStructureLiveView.swift */,
 				9CD14DC8261A819F00CCC861 /* ImageClassificationLiveView.swift */,
 				9CD14DD1261A821A00CCC861 /* RocketBoosterLandingLiveView.swift */,
@@ -687,6 +722,7 @@
 			isa = PBXGroup;
 			children = (
 				9C16615226142D61004622CF /* EarthView.swift */,
+				9CD14E6B261B85E200CCC861 /* NNStructureScene.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1007,6 +1043,10 @@
 				5EA2E3D02056F36100416A35 /* PBXTargetDependency */,
 				5EA2E3D22056F36300416A35 /* PBXTargetDependency */,
 				5E6F7E6B2368FB7D008CC191 /* PBXTargetDependency */,
+				9CD14E76261BFF1D00CCC861 /* PBXTargetDependency */,
+				9CD14E79261BFF1D00CCC861 /* PBXTargetDependency */,
+				9CD14E7C261BFF1D00CCC861 /* PBXTargetDependency */,
+				9CD14E7F261BFF1D00CCC861 /* PBXTargetDependency */,
 			);
 			name = LiveViewTestApp;
 			productName = LiveViewTestApp;
@@ -1251,7 +1291,6 @@
 				9CD14DC0261A817B00CCC861 /* NNStructureLiveView.swift in Sources */,
 				9CD14DDB261A824500CCC861 /* MyFacePuzzleLiveView.swift in Sources */,
 				9CD14DC9261A819F00CCC861 /* ImageClassificationLiveView.swift in Sources */,
-				9CB1CA4D2619291700574668 /* PerceptronLiveView.swift in Sources */,
 				9CD14DD2261A821A00CCC861 /* RocketBoosterLandingLiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1260,6 +1299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD14E6C261B85E200CCC861 /* NNStructureScene.swift in Sources */,
 				9C16616D26142DD2004622CF /* EarthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1397,6 +1437,26 @@
 			target = 9CC64057261949FC00A1BB60 /* DL4S */;
 			targetProxy = 9CC64150261A343300A1BB60 /* PBXContainerItemProxy */;
 		};
+		9CD14E76261BFF1D00CCC861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CC64057261949FC00A1BB60 /* DL4S */;
+			targetProxy = 9CD14E75261BFF1D00CCC861 /* PBXContainerItemProxy */;
+		};
+		9CD14E79261BFF1D00CCC861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CCDC62026193EE300CA6C09 /* ML */;
+			targetProxy = 9CD14E78261BFF1D00CCC861 /* PBXContainerItemProxy */;
+		};
+		9CD14E7C261BFF1D00CCC861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C16615B26142DB4004622CF /* Scenes */;
+			targetProxy = 9CD14E7B261BFF1D00CCC861 /* PBXContainerItemProxy */;
+		};
+		9CD14E7F261BFF1D00CCC861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C16612A26142BE9004622CF /* Views */;
+			targetProxy = 9CD14E7E261BFF1D00CCC861 /* PBXContainerItemProxy */;
+		};
 		9CD4166C2616621C003DF8B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5E6F7E602368FB6A008CC191 /* BookAPI */;
@@ -1525,7 +1585,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1580,7 +1641,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1619,7 +1681,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryandu.whatif.LiveViewTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryandu.exploreml.LiveViewTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1645,7 +1707,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryandu.whatif.LiveViewTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryandu.exploreml.LiveViewTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (

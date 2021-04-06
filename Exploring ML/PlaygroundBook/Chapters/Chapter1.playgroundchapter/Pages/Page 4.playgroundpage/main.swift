@@ -1,7 +1,7 @@
 //#-hidden-code
 //
 // Main.swift
-// What If Earth
+// Exploring ML
 //
 // Created by Ryan D on 3/30/21.
 //

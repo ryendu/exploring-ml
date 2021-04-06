@@ -11,4 +11,4 @@ import PlaygroundSupport
 import Views
 
 // Instantiate a new instance of the live view
-let view = instantiatePerceptronLiveView()
+let view = instantiateNNStructureLiveView()
