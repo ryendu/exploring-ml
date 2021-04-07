@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import DL4S
 
 public class AIRuleSocietyEnv{
     var stepN = 1

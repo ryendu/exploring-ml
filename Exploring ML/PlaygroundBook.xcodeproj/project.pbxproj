@@ -24,90 +24,6 @@
 		5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF2F9AD2054BBF300191409 /* LiveViewController.swift */; };
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
 		9C16616D26142DD2004622CF /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16615226142D61004622CF /* EarthView.swift */; };
-		9C9F0E9D26150912002D0578 /* earth albedo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9826150912002D0578 /* earth albedo.jpg */; };
-		9C9F0E9E26150912002D0578 /* earth land ocean mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9926150912002D0578 /* earth land ocean mask.png */; };
-		9C9F0E9F26150912002D0578 /* earth night_lights_modified.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */; };
-		9C9F0EA026150912002D0578 /* earth bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9B26150912002D0578 /* earth bump.jpg */; };
-		9C9F0EA126150912002D0578 /* clouds earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9C26150912002D0578 /* clouds earth.png */; };
-		9CC640FA261A33CE00A1BB60 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6409C261A33CE00A1BB60 /* Random.swift */; };
-		9CC640FB261A33CE00A1BB60 /* Adadelta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6409F261A33CE00A1BB60 /* Adadelta.swift */; };
-		9CC640FC261A33CE00A1BB60 /* Adagrad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A0261A33CE00A1BB60 /* Adagrad.swift */; };
-		9CC640FD261A33CE00A1BB60 /* Optim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A1261A33CE00A1BB60 /* Optim.swift */; };
-		9CC640FE261A33CE00A1BB60 /* SGD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A2261A33CE00A1BB60 /* SGD.swift */; };
-		9CC640FF261A33CE00A1BB60 /* Adam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A3261A33CE00A1BB60 /* Adam.swift */; };
-		9CC64100261A33CE00A1BB60 /* LearningRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A4261A33CE00A1BB60 /* LearningRate.swift */; };
-		9CC64101261A33CE00A1BB60 /* Momentum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A5261A33CE00A1BB60 /* Momentum.swift */; };
-		9CC64102261A33CE00A1BB60 /* RMSProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A6261A33CE00A1BB60 /* RMSProp.swift */; };
-		9CC64103261A33CE00A1BB60 /* ResNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640A8261A33CE00A1BB60 /* ResNet.swift */; };
-		9CC64104261A33CE00A1BB60 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640AA261A33CE00A1BB60 /* Transformer.swift */; };
-		9CC64105261A33CE00A1BB60 /* TransformerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640AB261A33CE00A1BB60 /* TransformerUtil.swift */; };
-		9CC64106261A33CE00A1BB60 /* ScaledDotProductAttention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640AC261A33CE00A1BB60 /* ScaledDotProductAttention.swift */; };
-		9CC64107261A33CF00A1BB60 /* PointwiseFeedForward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640AD261A33CE00A1BB60 /* PointwiseFeedForward.swift */; };
-		9CC64108261A33CF00A1BB60 /* TransformerDecoderBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640AE261A33CE00A1BB60 /* TransformerDecoderBlock.swift */; };
-		9CC64109261A33CF00A1BB60 /* TransformerDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640AF261A33CE00A1BB60 /* TransformerDecoder.swift */; };
-		9CC6410A261A33CF00A1BB60 /* TransformerEncoderBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B0261A33CE00A1BB60 /* TransformerEncoderBlock.swift */; };
-		9CC6410B261A33CF00A1BB60 /* MultiHeadAttention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B1261A33CE00A1BB60 /* MultiHeadAttention.swift */; };
-		9CC6410C261A33CF00A1BB60 /* PositionalEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B2261A33CE00A1BB60 /* PositionalEncoding.swift */; };
-		9CC6410D261A33CF00A1BB60 /* TransformerEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B3261A33CE00A1BB60 /* TransformerEncoder.swift */; };
-		9CC6410E261A33CF00A1BB60 /* AlexNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B4261A33CE00A1BB60 /* AlexNet.swift */; };
-		9CC6410F261A33CF00A1BB60 /* VGG16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B6261A33CE00A1BB60 /* VGG16.swift */; };
-		9CC64110261A33CF00A1BB60 /* VGG13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B7261A33CE00A1BB60 /* VGG13.swift */; };
-		9CC64111261A33CF00A1BB60 /* VGG11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B8261A33CE00A1BB60 /* VGG11.swift */; };
-		9CC64112261A33CF00A1BB60 /* VGG19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640B9261A33CE00A1BB60 /* VGG19.swift */; };
-		9CC64113261A33CF00A1BB60 /* VGG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640BA261A33CE00A1BB60 /* VGG.swift */; };
-		9CC64114261A33CF00A1BB60 /* Embedding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640BC261A33CE00A1BB60 /* Embedding.swift */; };
-		9CC64115261A33CF00A1BB60 /* GRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640BD261A33CE00A1BB60 /* GRU.swift */; };
-		9CC64116261A33CF00A1BB60 /* Activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640BE261A33CE00A1BB60 /* Activation.swift */; };
-		9CC64117261A33CF00A1BB60 /* RNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640BF261A33CE00A1BB60 /* RNN.swift */; };
-		9CC64118261A33CF00A1BB60 /* LayerNorm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C0261A33CE00A1BB60 /* LayerNorm.swift */; };
-		9CC64119261A33CF00A1BB60 /* Dense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C1261A33CE00A1BB60 /* Dense.swift */; };
-		9CC6411A261A33CF00A1BB60 /* Sequential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C2261A33CE00A1BB60 /* Sequential.swift */; };
-		9CC6411B261A33CF00A1BB60 /* BidirectionalRNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C3261A33CE00A1BB60 /* BidirectionalRNN.swift */; };
-		9CC6411C261A33CF00A1BB60 /* Convolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C4261A33CE00A1BB60 /* Convolution.swift */; };
-		9CC6411D261A33CF00A1BB60 /* Residual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C5261A33CE00A1BB60 /* Residual.swift */; };
-		9CC6411E261A33CF00A1BB60 /* Pooling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C6261A33CE00A1BB60 /* Pooling.swift */; };
-		9CC6411F261A33CF00A1BB60 /* Dropout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C7261A33CE00A1BB60 /* Dropout.swift */; };
-		9CC64120261A33CF00A1BB60 /* ShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C8261A33CE00A1BB60 /* ShapeLayer.swift */; };
-		9CC64121261A33CF00A1BB60 /* BasicRNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640C9261A33CE00A1BB60 /* BasicRNN.swift */; };
-		9CC64122261A33CF00A1BB60 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640CA261A33CE00A1BB60 /* Layer.swift */; };
-		9CC64123261A33CF00A1BB60 /* BatchNorm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640CB261A33CE00A1BB60 /* BatchNorm.swift */; };
-		9CC64124261A33CF00A1BB60 /* LSTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640CC261A33CE00A1BB60 /* LSTM.swift */; };
-		9CC64125261A33CF00A1BB60 /* Int32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640CE261A33CE00A1BB60 /* Int32.swift */; };
-		9CC64126261A33CF00A1BB60 /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640CF261A33CE00A1BB60 /* NumericType.swift */; };
-		9CC64127261A33CF00A1BB60 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D0261A33CE00A1BB60 /* Double.swift */; };
-		9CC64128261A33CF00A1BB60 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D1261A33CE00A1BB60 /* Float.swift */; };
-		9CC64129261A33CF00A1BB60 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D2261A33CE00A1BB60 /* Assertions.swift */; };
-		9CC6412A261A33CF00A1BB60 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D3261A33CE00A1BB60 /* Util.swift */; };
-		9CC6412B261A33CF00A1BB60 /* SummaryWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D4261A33CE00A1BB60 /* SummaryWriter.swift */; };
-		9CC6412C261A33CF00A1BB60 /* MemoryOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D6261A33CE00A1BB60 /* MemoryOps.swift */; };
-		9CC6412D261A33CF00A1BB60 /* Allocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D7261A33CE00A1BB60 /* Allocator.swift */; };
-		9CC6412E261A33CF00A1BB60 /* TensorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640D9261A33CE00A1BB60 /* TensorExt.swift */; };
-		9CC6412F261A33CF00A1BB60 /* Tensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640DA261A33CE00A1BB60 /* Tensor.swift */; };
-		9CC64130261A33CF00A1BB60 /* Conv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640DC261A33CE00A1BB60 /* Conv.swift */; };
-		9CC64131261A33CF00A1BB60 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640DD261A33CE00A1BB60 /* Stack.swift */; };
-		9CC64132261A33CF00A1BB60 /* Loss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640DE261A33CE00A1BB60 /* Loss.swift */; };
-		9CC64133261A33CF00A1BB60 /* Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640DF261A33CE00A1BB60 /* Subscript.swift */; };
-		9CC64134261A33CF00A1BB60 /* Unary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E0261A33CE00A1BB60 /* Unary.swift */; };
-		9CC64135261A33CF00A1BB60 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E1261A33CE00A1BB60 /* Shape.swift */; };
-		9CC64136261A33CF00A1BB60 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E2261A33CE00A1BB60 /* Matrix.swift */; };
-		9CC64137261A33CF00A1BB60 /* Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E3261A33CE00A1BB60 /* Reduce.swift */; };
-		9CC64138261A33CF00A1BB60 /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E4261A33CE00A1BB60 /* Binary.swift */; };
-		9CC64139261A33CF00A1BB60 /* UtilOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E5261A33CE00A1BB60 /* UtilOps.swift */; };
-		9CC6413A261A33CF00A1BB60 /* Scatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E6261A33CE00A1BB60 /* Scatter.swift */; };
-		9CC6413B261A33CF00A1BB60 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E7261A33CE00A1BB60 /* Graph.swift */; };
-		9CC6413C261A33CF00A1BB60 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E8261A33CE00A1BB60 /* Context.swift */; };
-		9CC6413D261A33CF00A1BB60 /* kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640E9261A33CE00A1BB60 /* kernels.metal */; };
-		9CC6413E261A33CF00A1BB60 /* Operators.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640EC261A33CE00A1BB60 /* Operators.metal */; };
-		9CC6413F261A33CF00A1BB60 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640ED261A33CE00A1BB60 /* Buffer.swift */; };
-		9CC64140261A33CF00A1BB60 /* GPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640EF261A33CE00A1BB60 /* GPU.swift */; };
-		9CC64141261A33CF00A1BB60 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F0261A33CE00A1BB60 /* Engine.swift */; };
-		9CC64142261A33CF00A1BB60 /* CPUEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F2261A33CE00A1BB60 /* CPUEngine.swift */; };
-		9CC64143261A33CF00A1BB60 /* CPUNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F4261A33CE00A1BB60 /* CPUNumeric.swift */; };
-		9CC64144261A33CF00A1BB60 /* CPUGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F5261A33CE00A1BB60 /* CPUGeneric.swift */; };
-		9CC64145261A33CF00A1BB60 /* CPUFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F6261A33CE00A1BB60 /* CPUFloat.swift */; };
-		9CC64146261A33CF00A1BB60 /* CPUDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F7261A33CE00A1BB60 /* CPUDouble.swift */; };
-		9CC64147261A33CF00A1BB60 /* CPUInt32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F8261A33CE00A1BB60 /* CPUInt32.swift */; };
-		9CC64148261A33CF00A1BB60 /* CPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC640F9261A33CE00A1BB60 /* CPU.swift */; };
 		9CC6415A261A3B4C00A1BB60 /* AIRuleSocietyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64159261A3B4C00A1BB60 /* AIRuleSocietyEnvironment.swift */; };
 		9CCDC64626193F1C00CA6C09 /* TrainAiRuleSociety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC63626193F1400CA6C09 /* TrainAiRuleSociety.swift */; };
 		9CD14DC0261A817B00CCC861 /* NNStructureLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DBF261A817B00CCC861 /* NNStructureLiveView.swift */; };
@@ -115,17 +31,13 @@
 		9CD14DD2261A821A00CCC861 /* RocketBoosterLandingLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DD1261A821A00CCC861 /* RocketBoosterLandingLiveView.swift */; };
 		9CD14DDB261A824500CCC861 /* MyFacePuzzleLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DDA261A824500CCC861 /* MyFacePuzzleLiveView.swift */; };
 		9CD14E6C261B85E200CCC861 /* NNStructureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14E6B261B85E200CCC861 /* NNStructureScene.swift */; };
-		9CD14E74261BFF1D00CCC861 /* libDL4S.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC64058261949FC00A1BB60 /* libDL4S.a */; };
 		9CD14E77261BFF1D00CCC861 /* libML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCDC62126193EE300CA6C09 /* libML.a */; };
 		9CD14E7A261BFF1D00CCC861 /* libScenes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16615C26142DB4004622CF /* libScenes.a */; };
 		9CD14E7D261BFF1D00CCC861 /* libViews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16612B26142BE9004622CF /* libViews.a */; };
+		9CD14EEC261CF53B00CCC861 /* equation1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD14EEB261CF53B00CCC861 /* equation1.png */; };
+		9CD14EED261CF53B00CCC861 /* equation1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD14EEB261CF53B00CCC861 /* equation1.png */; };
 		9CD41655261661E3003DF8B5 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
 		9CD41656261661E3003DF8B5 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
-		9CD41657261661E3003DF8B5 /* earth albedo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9826150912002D0578 /* earth albedo.jpg */; };
-		9CD41658261661E3003DF8B5 /* earth land ocean mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9926150912002D0578 /* earth land ocean mask.png */; };
-		9CD41659261661E3003DF8B5 /* earth night_lights_modified.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */; };
-		9CD4165A261661E3003DF8B5 /* earth bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9B26150912002D0578 /* earth bump.jpg */; };
-		9CD4165B261661E3003DF8B5 /* clouds earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F0E9C26150912002D0578 /* clouds earth.png */; };
 		9CD4165C261661E3003DF8B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E551EC42371FC3F00784365 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -167,13 +79,6 @@
 			remoteGlobalIDString = 5E6F7E602368FB6A008CC191;
 			remoteInfo = BookAPI;
 		};
-		5EA2E3CF2056F36100416A35 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5E086DBF2051C5A7004D8D25;
-			remoteInfo = PlaygroundBook;
-		};
 		5EA2E3D12056F36300416A35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
@@ -187,20 +92,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5EF2F9AA2054BBF300191409;
 			remoteInfo = Book_Sources;
-		};
-		9CC64150261A343300A1BB60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9CC64057261949FC00A1BB60;
-			remoteInfo = DL4S;
-		};
-		9CD14E75261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9CC64057261949FC00A1BB60;
-			remoteInfo = DL4S;
 		};
 		9CD14E78261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -292,15 +183,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CC64056261949FC00A1BB60 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9CCDC61F26193EE300CA6C09 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,91 +225,6 @@
 		9C16612B26142BE9004622CF /* libViews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViews.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C16615226142D61004622CF /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
 		9C16615C26142DB4004622CF /* libScenes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScenes.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C9F0E9826150912002D0578 /* earth albedo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "earth albedo.jpg"; sourceTree = "<group>"; };
-		9C9F0E9926150912002D0578 /* earth land ocean mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth land ocean mask.png"; sourceTree = "<group>"; };
-		9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth night_lights_modified.png"; sourceTree = "<group>"; };
-		9C9F0E9B26150912002D0578 /* earth bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "earth bump.jpg"; sourceTree = "<group>"; };
-		9C9F0E9C26150912002D0578 /* clouds earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clouds earth.png"; sourceTree = "<group>"; };
-		9CC64058261949FC00A1BB60 /* libDL4S.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDL4S.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CC6409C261A33CE00A1BB60 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
-		9CC6409F261A33CE00A1BB60 /* Adadelta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adadelta.swift; sourceTree = "<group>"; };
-		9CC640A0261A33CE00A1BB60 /* Adagrad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adagrad.swift; sourceTree = "<group>"; };
-		9CC640A1261A33CE00A1BB60 /* Optim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optim.swift; sourceTree = "<group>"; };
-		9CC640A2261A33CE00A1BB60 /* SGD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGD.swift; sourceTree = "<group>"; };
-		9CC640A3261A33CE00A1BB60 /* Adam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adam.swift; sourceTree = "<group>"; };
-		9CC640A4261A33CE00A1BB60 /* LearningRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningRate.swift; sourceTree = "<group>"; };
-		9CC640A5261A33CE00A1BB60 /* Momentum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Momentum.swift; sourceTree = "<group>"; };
-		9CC640A6261A33CE00A1BB60 /* RMSProp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSProp.swift; sourceTree = "<group>"; };
-		9CC640A8261A33CE00A1BB60 /* ResNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResNet.swift; sourceTree = "<group>"; };
-		9CC640AA261A33CE00A1BB60 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
-		9CC640AB261A33CE00A1BB60 /* TransformerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerUtil.swift; sourceTree = "<group>"; };
-		9CC640AC261A33CE00A1BB60 /* ScaledDotProductAttention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaledDotProductAttention.swift; sourceTree = "<group>"; };
-		9CC640AD261A33CE00A1BB60 /* PointwiseFeedForward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointwiseFeedForward.swift; sourceTree = "<group>"; };
-		9CC640AE261A33CE00A1BB60 /* TransformerDecoderBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerDecoderBlock.swift; sourceTree = "<group>"; };
-		9CC640AF261A33CE00A1BB60 /* TransformerDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerDecoder.swift; sourceTree = "<group>"; };
-		9CC640B0261A33CE00A1BB60 /* TransformerEncoderBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerEncoderBlock.swift; sourceTree = "<group>"; };
-		9CC640B1261A33CE00A1BB60 /* MultiHeadAttention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiHeadAttention.swift; sourceTree = "<group>"; };
-		9CC640B2261A33CE00A1BB60 /* PositionalEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionalEncoding.swift; sourceTree = "<group>"; };
-		9CC640B3261A33CE00A1BB60 /* TransformerEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformerEncoder.swift; sourceTree = "<group>"; };
-		9CC640B4261A33CE00A1BB60 /* AlexNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlexNet.swift; sourceTree = "<group>"; };
-		9CC640B6261A33CE00A1BB60 /* VGG16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGG16.swift; sourceTree = "<group>"; };
-		9CC640B7261A33CE00A1BB60 /* VGG13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGG13.swift; sourceTree = "<group>"; };
-		9CC640B8261A33CE00A1BB60 /* VGG11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGG11.swift; sourceTree = "<group>"; };
-		9CC640B9261A33CE00A1BB60 /* VGG19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGG19.swift; sourceTree = "<group>"; };
-		9CC640BA261A33CE00A1BB60 /* VGG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGG.swift; sourceTree = "<group>"; };
-		9CC640BC261A33CE00A1BB60 /* Embedding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Embedding.swift; sourceTree = "<group>"; };
-		9CC640BD261A33CE00A1BB60 /* GRU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRU.swift; sourceTree = "<group>"; };
-		9CC640BE261A33CE00A1BB60 /* Activation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activation.swift; sourceTree = "<group>"; };
-		9CC640BF261A33CE00A1BB60 /* RNN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNN.swift; sourceTree = "<group>"; };
-		9CC640C0261A33CE00A1BB60 /* LayerNorm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerNorm.swift; sourceTree = "<group>"; };
-		9CC640C1261A33CE00A1BB60 /* Dense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dense.swift; sourceTree = "<group>"; };
-		9CC640C2261A33CE00A1BB60 /* Sequential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequential.swift; sourceTree = "<group>"; };
-		9CC640C3261A33CE00A1BB60 /* BidirectionalRNN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidirectionalRNN.swift; sourceTree = "<group>"; };
-		9CC640C4261A33CE00A1BB60 /* Convolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convolution.swift; sourceTree = "<group>"; };
-		9CC640C5261A33CE00A1BB60 /* Residual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Residual.swift; sourceTree = "<group>"; };
-		9CC640C6261A33CE00A1BB60 /* Pooling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pooling.swift; sourceTree = "<group>"; };
-		9CC640C7261A33CE00A1BB60 /* Dropout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropout.swift; sourceTree = "<group>"; };
-		9CC640C8261A33CE00A1BB60 /* ShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeLayer.swift; sourceTree = "<group>"; };
-		9CC640C9261A33CE00A1BB60 /* BasicRNN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicRNN.swift; sourceTree = "<group>"; };
-		9CC640CA261A33CE00A1BB60 /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
-		9CC640CB261A33CE00A1BB60 /* BatchNorm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchNorm.swift; sourceTree = "<group>"; };
-		9CC640CC261A33CE00A1BB60 /* LSTM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSTM.swift; sourceTree = "<group>"; };
-		9CC640CE261A33CE00A1BB60 /* Int32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int32.swift; sourceTree = "<group>"; };
-		9CC640CF261A33CE00A1BB60 /* NumericType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericType.swift; sourceTree = "<group>"; };
-		9CC640D0261A33CE00A1BB60 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		9CC640D1261A33CE00A1BB60 /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
-		9CC640D2261A33CE00A1BB60 /* Assertions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
-		9CC640D3261A33CE00A1BB60 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		9CC640D4261A33CE00A1BB60 /* SummaryWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryWriter.swift; sourceTree = "<group>"; };
-		9CC640D6261A33CE00A1BB60 /* MemoryOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryOps.swift; sourceTree = "<group>"; };
-		9CC640D7261A33CE00A1BB60 /* Allocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Allocator.swift; sourceTree = "<group>"; };
-		9CC640D9261A33CE00A1BB60 /* TensorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TensorExt.swift; sourceTree = "<group>"; };
-		9CC640DA261A33CE00A1BB60 /* Tensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tensor.swift; sourceTree = "<group>"; };
-		9CC640DC261A33CE00A1BB60 /* Conv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conv.swift; sourceTree = "<group>"; };
-		9CC640DD261A33CE00A1BB60 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		9CC640DE261A33CE00A1BB60 /* Loss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loss.swift; sourceTree = "<group>"; };
-		9CC640DF261A33CE00A1BB60 /* Subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscript.swift; sourceTree = "<group>"; };
-		9CC640E0261A33CE00A1BB60 /* Unary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unary.swift; sourceTree = "<group>"; };
-		9CC640E1261A33CE00A1BB60 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
-		9CC640E2261A33CE00A1BB60 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
-		9CC640E3261A33CE00A1BB60 /* Reduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reduce.swift; sourceTree = "<group>"; };
-		9CC640E4261A33CE00A1BB60 /* Binary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
-		9CC640E5261A33CE00A1BB60 /* UtilOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilOps.swift; sourceTree = "<group>"; };
-		9CC640E6261A33CE00A1BB60 /* Scatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scatter.swift; sourceTree = "<group>"; };
-		9CC640E7261A33CE00A1BB60 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
-		9CC640E8261A33CE00A1BB60 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		9CC640E9261A33CE00A1BB60 /* kernels.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = kernels.metal; sourceTree = "<group>"; };
-		9CC640EC261A33CE00A1BB60 /* Operators.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Operators.metal; sourceTree = "<group>"; };
-		9CC640ED261A33CE00A1BB60 /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
-		9CC640EF261A33CE00A1BB60 /* GPU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPU.swift; sourceTree = "<group>"; };
-		9CC640F0261A33CE00A1BB60 /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
-		9CC640F2261A33CE00A1BB60 /* CPUEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUEngine.swift; sourceTree = "<group>"; };
-		9CC640F4261A33CE00A1BB60 /* CPUNumeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUNumeric.swift; sourceTree = "<group>"; };
-		9CC640F5261A33CE00A1BB60 /* CPUGeneric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUGeneric.swift; sourceTree = "<group>"; };
-		9CC640F6261A33CE00A1BB60 /* CPUFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUFloat.swift; sourceTree = "<group>"; };
-		9CC640F7261A33CE00A1BB60 /* CPUDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUDouble.swift; sourceTree = "<group>"; };
-		9CC640F8261A33CE00A1BB60 /* CPUInt32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUInt32.swift; sourceTree = "<group>"; };
-		9CC640F9261A33CE00A1BB60 /* CPU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPU.swift; sourceTree = "<group>"; };
 		9CC64159261A3B4C00A1BB60 /* AIRuleSocietyEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRuleSocietyEnvironment.swift; sourceTree = "<group>"; };
 		9CCDC62126193EE300CA6C09 /* libML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libML.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CCDC63626193F1400CA6C09 /* TrainAiRuleSociety.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAiRuleSociety.swift; sourceTree = "<group>"; };
@@ -436,6 +233,7 @@
 		9CD14DD1261A821A00CCC861 /* RocketBoosterLandingLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketBoosterLandingLiveView.swift; sourceTree = "<group>"; };
 		9CD14DDA261A824500CCC861 /* MyFacePuzzleLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFacePuzzleLiveView.swift; sourceTree = "<group>"; };
 		9CD14E6B261B85E200CCC861 /* NNStructureScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNStructureScene.swift; sourceTree = "<group>"; };
+		9CD14EEB261CF53B00CCC861 /* equation1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equation1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,9 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CD14E77261BFF1D00CCC861 /* libML.a in Frameworks */,
-				9CD14E7D261BFF1D00CCC861 /* libViews.a in Frameworks */,
-				9CD14E74261BFF1D00CCC861 /* libDL4S.a in Frameworks */,
 				9CD14E7A261BFF1D00CCC861 /* libScenes.a in Frameworks */,
+				9CD14E7D261BFF1D00CCC861 /* libViews.a in Frameworks */,
 				5EA2E3D42056F36800416A35 /* libBookCore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,13 +283,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CC64055261949FC00A1BB60 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9CCDC61E26193EE300CA6C09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -513,7 +303,6 @@
 				9C16612B26142BE9004622CF /* libViews.a */,
 				9C16615C26142DB4004622CF /* libScenes.a */,
 				9CCDC62126193EE300CA6C09 /* libML.a */,
-				9CC64058261949FC00A1BB60 /* libDL4S.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -600,7 +389,6 @@
 		5E70679B23678D810094BDEF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9CC64052261949CE00A1BB60 /* DL4S.playgroundmodule */,
 				5E70679C23678D8A0094BDEF /* BookCore.playgroundmodule */,
 				5E6F7E5A2367B621008CC191 /* BookAPI.playgroundmodule */,
 			);
@@ -674,9 +462,9 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				9CD14EEB261CF53B00CCC861 /* equation1.png */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
-				9C9F0E9726150912002D0578 /* earth_textures */,
 				5E551EC42371FC3F00784365 /* Assets.xcassets */,
 			);
 			path = PrivateResources;
@@ -727,245 +515,11 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		9C9F0E9726150912002D0578 /* earth_textures */ = {
-			isa = PBXGroup;
-			children = (
-				9C9F0E9826150912002D0578 /* earth albedo.jpg */,
-				9C9F0E9926150912002D0578 /* earth land ocean mask.png */,
-				9C9F0E9A26150912002D0578 /* earth night_lights_modified.png */,
-				9C9F0E9B26150912002D0578 /* earth bump.jpg */,
-				9C9F0E9C26150912002D0578 /* clouds earth.png */,
-			);
-			path = earth_textures;
-			sourceTree = "<group>";
-		};
 		9CB1CA5B26192C0300574668 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9CC64052261949CE00A1BB60 /* DL4S.playgroundmodule */ = {
-			isa = PBXGroup;
-			children = (
-				9CC64053261949E300A1BB60 /* Sources */,
-			);
-			path = DL4S.playgroundmodule;
-			sourceTree = "<group>";
-		};
-		9CC64053261949E300A1BB60 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				9CC6409B261A33CE00A1BB60 /* DL4S */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		9CC6409B261A33CE00A1BB60 /* DL4S */ = {
-			isa = PBXGroup;
-			children = (
-				9CC6409C261A33CE00A1BB60 /* Random.swift */,
-				9CC6409D261A33CE00A1BB60 /* NN */,
-				9CC640CD261A33CE00A1BB60 /* Numerics */,
-				9CC640D2261A33CE00A1BB60 /* Assertions.swift */,
-				9CC640D3261A33CE00A1BB60 /* Util.swift */,
-				9CC640D4261A33CE00A1BB60 /* SummaryWriter.swift */,
-				9CC640D5261A33CE00A1BB60 /* Memory Management */,
-				9CC640D8261A33CE00A1BB60 /* Tensor */,
-				9CC640E9261A33CE00A1BB60 /* kernels.metal */,
-				9CC640EA261A33CE00A1BB60 /* Engine */,
-			);
-			path = DL4S;
-			sourceTree = "<group>";
-		};
-		9CC6409D261A33CE00A1BB60 /* NN */ = {
-			isa = PBXGroup;
-			children = (
-				9CC6409E261A33CE00A1BB60 /* Optimizer */,
-				9CC640A7261A33CE00A1BB60 /* Models */,
-				9CC640BB261A33CE00A1BB60 /* Layer */,
-			);
-			path = NN;
-			sourceTree = "<group>";
-		};
-		9CC6409E261A33CE00A1BB60 /* Optimizer */ = {
-			isa = PBXGroup;
-			children = (
-				9CC6409F261A33CE00A1BB60 /* Adadelta.swift */,
-				9CC640A0261A33CE00A1BB60 /* Adagrad.swift */,
-				9CC640A1261A33CE00A1BB60 /* Optim.swift */,
-				9CC640A2261A33CE00A1BB60 /* SGD.swift */,
-				9CC640A3261A33CE00A1BB60 /* Adam.swift */,
-				9CC640A4261A33CE00A1BB60 /* LearningRate.swift */,
-				9CC640A5261A33CE00A1BB60 /* Momentum.swift */,
-				9CC640A6261A33CE00A1BB60 /* RMSProp.swift */,
-			);
-			path = Optimizer;
-			sourceTree = "<group>";
-		};
-		9CC640A7261A33CE00A1BB60 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640A8261A33CE00A1BB60 /* ResNet.swift */,
-				9CC640A9261A33CE00A1BB60 /* Transformer */,
-				9CC640B4261A33CE00A1BB60 /* AlexNet.swift */,
-				9CC640B5261A33CE00A1BB60 /* VGG */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		9CC640A9261A33CE00A1BB60 /* Transformer */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640AA261A33CE00A1BB60 /* Transformer.swift */,
-				9CC640AB261A33CE00A1BB60 /* TransformerUtil.swift */,
-				9CC640AC261A33CE00A1BB60 /* ScaledDotProductAttention.swift */,
-				9CC640AD261A33CE00A1BB60 /* PointwiseFeedForward.swift */,
-				9CC640AE261A33CE00A1BB60 /* TransformerDecoderBlock.swift */,
-				9CC640AF261A33CE00A1BB60 /* TransformerDecoder.swift */,
-				9CC640B0261A33CE00A1BB60 /* TransformerEncoderBlock.swift */,
-				9CC640B1261A33CE00A1BB60 /* MultiHeadAttention.swift */,
-				9CC640B2261A33CE00A1BB60 /* PositionalEncoding.swift */,
-				9CC640B3261A33CE00A1BB60 /* TransformerEncoder.swift */,
-			);
-			path = Transformer;
-			sourceTree = "<group>";
-		};
-		9CC640B5261A33CE00A1BB60 /* VGG */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640B6261A33CE00A1BB60 /* VGG16.swift */,
-				9CC640B7261A33CE00A1BB60 /* VGG13.swift */,
-				9CC640B8261A33CE00A1BB60 /* VGG11.swift */,
-				9CC640B9261A33CE00A1BB60 /* VGG19.swift */,
-				9CC640BA261A33CE00A1BB60 /* VGG.swift */,
-			);
-			path = VGG;
-			sourceTree = "<group>";
-		};
-		9CC640BB261A33CE00A1BB60 /* Layer */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640BC261A33CE00A1BB60 /* Embedding.swift */,
-				9CC640BD261A33CE00A1BB60 /* GRU.swift */,
-				9CC640BE261A33CE00A1BB60 /* Activation.swift */,
-				9CC640BF261A33CE00A1BB60 /* RNN.swift */,
-				9CC640C0261A33CE00A1BB60 /* LayerNorm.swift */,
-				9CC640C1261A33CE00A1BB60 /* Dense.swift */,
-				9CC640C2261A33CE00A1BB60 /* Sequential.swift */,
-				9CC640C3261A33CE00A1BB60 /* BidirectionalRNN.swift */,
-				9CC640C4261A33CE00A1BB60 /* Convolution.swift */,
-				9CC640C5261A33CE00A1BB60 /* Residual.swift */,
-				9CC640C6261A33CE00A1BB60 /* Pooling.swift */,
-				9CC640C7261A33CE00A1BB60 /* Dropout.swift */,
-				9CC640C8261A33CE00A1BB60 /* ShapeLayer.swift */,
-				9CC640C9261A33CE00A1BB60 /* BasicRNN.swift */,
-				9CC640CA261A33CE00A1BB60 /* Layer.swift */,
-				9CC640CB261A33CE00A1BB60 /* BatchNorm.swift */,
-				9CC640CC261A33CE00A1BB60 /* LSTM.swift */,
-			);
-			path = Layer;
-			sourceTree = "<group>";
-		};
-		9CC640CD261A33CE00A1BB60 /* Numerics */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640CE261A33CE00A1BB60 /* Int32.swift */,
-				9CC640CF261A33CE00A1BB60 /* NumericType.swift */,
-				9CC640D0261A33CE00A1BB60 /* Double.swift */,
-				9CC640D1261A33CE00A1BB60 /* Float.swift */,
-			);
-			path = Numerics;
-			sourceTree = "<group>";
-		};
-		9CC640D5261A33CE00A1BB60 /* Memory Management */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640D6261A33CE00A1BB60 /* MemoryOps.swift */,
-				9CC640D7261A33CE00A1BB60 /* Allocator.swift */,
-			);
-			path = "Memory Management";
-			sourceTree = "<group>";
-		};
-		9CC640D8261A33CE00A1BB60 /* Tensor */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640D9261A33CE00A1BB60 /* TensorExt.swift */,
-				9CC640DA261A33CE00A1BB60 /* Tensor.swift */,
-				9CC640DB261A33CE00A1BB60 /* Operators */,
-				9CC640E7261A33CE00A1BB60 /* Graph.swift */,
-				9CC640E8261A33CE00A1BB60 /* Context.swift */,
-			);
-			path = Tensor;
-			sourceTree = "<group>";
-		};
-		9CC640DB261A33CE00A1BB60 /* Operators */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640DC261A33CE00A1BB60 /* Conv.swift */,
-				9CC640DD261A33CE00A1BB60 /* Stack.swift */,
-				9CC640DE261A33CE00A1BB60 /* Loss.swift */,
-				9CC640DF261A33CE00A1BB60 /* Subscript.swift */,
-				9CC640E0261A33CE00A1BB60 /* Unary.swift */,
-				9CC640E1261A33CE00A1BB60 /* Shape.swift */,
-				9CC640E2261A33CE00A1BB60 /* Matrix.swift */,
-				9CC640E3261A33CE00A1BB60 /* Reduce.swift */,
-				9CC640E4261A33CE00A1BB60 /* Binary.swift */,
-				9CC640E5261A33CE00A1BB60 /* UtilOps.swift */,
-				9CC640E6261A33CE00A1BB60 /* Scatter.swift */,
-			);
-			path = Operators;
-			sourceTree = "<group>";
-		};
-		9CC640EA261A33CE00A1BB60 /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640EB261A33CE00A1BB60 /* Kernels */,
-				9CC640ED261A33CE00A1BB60 /* Buffer.swift */,
-				9CC640EE261A33CE00A1BB60 /* GPU */,
-				9CC640F0261A33CE00A1BB60 /* Engine.swift */,
-				9CC640F1261A33CE00A1BB60 /* CPU */,
-			);
-			path = Engine;
-			sourceTree = "<group>";
-		};
-		9CC640EB261A33CE00A1BB60 /* Kernels */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640EC261A33CE00A1BB60 /* Operators.metal */,
-			);
-			path = Kernels;
-			sourceTree = "<group>";
-		};
-		9CC640EE261A33CE00A1BB60 /* GPU */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640EF261A33CE00A1BB60 /* GPU.swift */,
-			);
-			path = GPU;
-			sourceTree = "<group>";
-		};
-		9CC640F1261A33CE00A1BB60 /* CPU */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640F2261A33CE00A1BB60 /* CPUEngine.swift */,
-				9CC640F3261A33CE00A1BB60 /* Numeric */,
-				9CC640F9261A33CE00A1BB60 /* CPU.swift */,
-			);
-			path = CPU;
-			sourceTree = "<group>";
-		};
-		9CC640F3261A33CE00A1BB60 /* Numeric */ = {
-			isa = PBXGroup;
-			children = (
-				9CC640F4261A33CE00A1BB60 /* CPUNumeric.swift */,
-				9CC640F5261A33CE00A1BB60 /* CPUGeneric.swift */,
-				9CC640F6261A33CE00A1BB60 /* CPUFloat.swift */,
-				9CC640F7261A33CE00A1BB60 /* CPUDouble.swift */,
-				9CC640F8261A33CE00A1BB60 /* CPUInt32.swift */,
-			);
-			path = Numeric;
 			sourceTree = "<group>";
 		};
 		9CCDC61B26193EB500CA6C09 /* ML.playgroundmodule */ = {
@@ -1040,10 +594,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				5EA2E3D02056F36100416A35 /* PBXTargetDependency */,
-				5EA2E3D22056F36300416A35 /* PBXTargetDependency */,
 				5E6F7E6B2368FB7D008CC191 /* PBXTargetDependency */,
-				9CD14E76261BFF1D00CCC861 /* PBXTargetDependency */,
+				5EA2E3D22056F36300416A35 /* PBXTargetDependency */,
 				9CD14E79261BFF1D00CCC861 /* PBXTargetDependency */,
 				9CD14E7C261BFF1D00CCC861 /* PBXTargetDependency */,
 				9CD14E7F261BFF1D00CCC861 /* PBXTargetDependency */,
@@ -1106,23 +658,6 @@
 			productReference = 9C16615C26142DB4004622CF /* libScenes.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		9CC64057261949FC00A1BB60 /* DL4S */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9CC6405C261949FC00A1BB60 /* Build configuration list for PBXNativeTarget "DL4S" */;
-			buildPhases = (
-				9CC64054261949FC00A1BB60 /* Sources */,
-				9CC64055261949FC00A1BB60 /* Frameworks */,
-				9CC64056261949FC00A1BB60 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DL4S;
-			productName = DL4S;
-			productReference = 9CC64058261949FC00A1BB60 /* libDL4S.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		9CCDC62026193EE300CA6C09 /* ML */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CCDC62526193EE300CA6C09 /* Build configuration list for PBXNativeTarget "ML" */;
@@ -1134,7 +669,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9CC64151261A343300A1BB60 /* PBXTargetDependency */,
 			);
 			name = ML;
 			productName = ML;
@@ -1170,9 +704,6 @@
 					9C16615B26142DB4004622CF = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					9CC64057261949FC00A1BB60 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					9CCDC62026193EE300CA6C09 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -1200,7 +731,6 @@
 				9C16612A26142BE9004622CF /* Views */,
 				9C16615B26142DB4004622CF /* Scenes */,
 				9CCDC62026193EE300CA6C09 /* ML */,
-				9CC64057261949FC00A1BB60 /* DL4S */,
 			);
 		};
 /* End PBXProject section */
@@ -1212,11 +742,7 @@
 			files = (
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				5E551EC52371FC3F00784365 /* Assets.xcassets in Resources */,
-				9C9F0E9D26150912002D0578 /* earth albedo.jpg in Resources */,
-				9C9F0E9E26150912002D0578 /* earth land ocean mask.png in Resources */,
-				9C9F0EA026150912002D0578 /* earth bump.jpg in Resources */,
-				9C9F0EA126150912002D0578 /* clouds earth.png in Resources */,
-				9C9F0E9F26150912002D0578 /* earth night_lights_modified.png in Resources */,
+				9CD14EEC261CF53B00CCC861 /* equation1.png in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1227,11 +753,7 @@
 			files = (
 				9CD41655261661E3003DF8B5 /* ManifestPlist.strings in Resources */,
 				9CD41656261661E3003DF8B5 /* LiveView.storyboard in Resources */,
-				9CD41657261661E3003DF8B5 /* earth albedo.jpg in Resources */,
-				9CD41658261661E3003DF8B5 /* earth land ocean mask.png in Resources */,
-				9CD41659261661E3003DF8B5 /* earth night_lights_modified.png in Resources */,
-				9CD4165A261661E3003DF8B5 /* earth bump.jpg in Resources */,
-				9CD4165B261661E3003DF8B5 /* clouds earth.png in Resources */,
+				9CD14EED261CF53B00CCC861 /* equation1.png in Resources */,
 				9CD4165C261661E3003DF8B5 /* Assets.xcassets in Resources */,
 				5EA2E3CA2056F35B00416A35 /* LiveViewTestAppLaunchScreen.storyboard in Resources */,
 			);
@@ -1304,92 +826,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CC64054261949FC00A1BB60 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9CC64104261A33CE00A1BB60 /* Transformer.swift in Sources */,
-				9CC64138261A33CF00A1BB60 /* Binary.swift in Sources */,
-				9CC64112261A33CF00A1BB60 /* VGG19.swift in Sources */,
-				9CC64134261A33CF00A1BB60 /* Unary.swift in Sources */,
-				9CC64105261A33CE00A1BB60 /* TransformerUtil.swift in Sources */,
-				9CC6410A261A33CF00A1BB60 /* TransformerEncoderBlock.swift in Sources */,
-				9CC64110261A33CF00A1BB60 /* VGG13.swift in Sources */,
-				9CC6412B261A33CF00A1BB60 /* SummaryWriter.swift in Sources */,
-				9CC64111261A33CF00A1BB60 /* VGG11.swift in Sources */,
-				9CC64147261A33CF00A1BB60 /* CPUInt32.swift in Sources */,
-				9CC64129261A33CF00A1BB60 /* Assertions.swift in Sources */,
-				9CC6411E261A33CF00A1BB60 /* Pooling.swift in Sources */,
-				9CC640FA261A33CE00A1BB60 /* Random.swift in Sources */,
-				9CC64106261A33CE00A1BB60 /* ScaledDotProductAttention.swift in Sources */,
-				9CC64121261A33CF00A1BB60 /* BasicRNN.swift in Sources */,
-				9CC64137261A33CF00A1BB60 /* Reduce.swift in Sources */,
-				9CC64124261A33CF00A1BB60 /* LSTM.swift in Sources */,
-				9CC64102261A33CE00A1BB60 /* RMSProp.swift in Sources */,
-				9CC64103261A33CE00A1BB60 /* ResNet.swift in Sources */,
-				9CC6413B261A33CF00A1BB60 /* Graph.swift in Sources */,
-				9CC64115261A33CF00A1BB60 /* GRU.swift in Sources */,
-				9CC6411C261A33CF00A1BB60 /* Convolution.swift in Sources */,
-				9CC64107261A33CF00A1BB60 /* PointwiseFeedForward.swift in Sources */,
-				9CC6412F261A33CF00A1BB60 /* Tensor.swift in Sources */,
-				9CC64148261A33CF00A1BB60 /* CPU.swift in Sources */,
-				9CC6413F261A33CF00A1BB60 /* Buffer.swift in Sources */,
-				9CC64140261A33CF00A1BB60 /* GPU.swift in Sources */,
-				9CC64118261A33CF00A1BB60 /* LayerNorm.swift in Sources */,
-				9CC640FE261A33CE00A1BB60 /* SGD.swift in Sources */,
-				9CC6411A261A33CF00A1BB60 /* Sequential.swift in Sources */,
-				9CC6410F261A33CF00A1BB60 /* VGG16.swift in Sources */,
-				9CC64122261A33CF00A1BB60 /* Layer.swift in Sources */,
-				9CC64117261A33CF00A1BB60 /* RNN.swift in Sources */,
-				9CC64100261A33CE00A1BB60 /* LearningRate.swift in Sources */,
-				9CC64101261A33CE00A1BB60 /* Momentum.swift in Sources */,
-				9CC64108261A33CF00A1BB60 /* TransformerDecoderBlock.swift in Sources */,
-				9CC64123261A33CF00A1BB60 /* BatchNorm.swift in Sources */,
-				9CC6410C261A33CF00A1BB60 /* PositionalEncoding.swift in Sources */,
-				9CC6411F261A33CF00A1BB60 /* Dropout.swift in Sources */,
-				9CC640FF261A33CE00A1BB60 /* Adam.swift in Sources */,
-				9CC64128261A33CF00A1BB60 /* Float.swift in Sources */,
-				9CC64119261A33CF00A1BB60 /* Dense.swift in Sources */,
-				9CC6413D261A33CF00A1BB60 /* kernels.metal in Sources */,
-				9CC6412A261A33CF00A1BB60 /* Util.swift in Sources */,
-				9CC64113261A33CF00A1BB60 /* VGG.swift in Sources */,
-				9CC6413C261A33CF00A1BB60 /* Context.swift in Sources */,
-				9CC64146261A33CF00A1BB60 /* CPUDouble.swift in Sources */,
-				9CC6412E261A33CF00A1BB60 /* TensorExt.swift in Sources */,
-				9CC64136261A33CF00A1BB60 /* Matrix.swift in Sources */,
-				9CC6410D261A33CF00A1BB60 /* TransformerEncoder.swift in Sources */,
-				9CC64116261A33CF00A1BB60 /* Activation.swift in Sources */,
-				9CC64109261A33CF00A1BB60 /* TransformerDecoder.swift in Sources */,
-				9CC64127261A33CF00A1BB60 /* Double.swift in Sources */,
-				9CC6410B261A33CF00A1BB60 /* MultiHeadAttention.swift in Sources */,
-				9CC64132261A33CF00A1BB60 /* Loss.swift in Sources */,
-				9CC64144261A33CF00A1BB60 /* CPUGeneric.swift in Sources */,
-				9CC64120261A33CF00A1BB60 /* ShapeLayer.swift in Sources */,
-				9CC640FC261A33CE00A1BB60 /* Adagrad.swift in Sources */,
-				9CC64131261A33CF00A1BB60 /* Stack.swift in Sources */,
-				9CC6411D261A33CF00A1BB60 /* Residual.swift in Sources */,
-				9CC64125261A33CF00A1BB60 /* Int32.swift in Sources */,
-				9CC6410E261A33CF00A1BB60 /* AlexNet.swift in Sources */,
-				9CC64142261A33CF00A1BB60 /* CPUEngine.swift in Sources */,
-				9CC6413E261A33CF00A1BB60 /* Operators.metal in Sources */,
-				9CC64133261A33CF00A1BB60 /* Subscript.swift in Sources */,
-				9CC64126261A33CF00A1BB60 /* NumericType.swift in Sources */,
-				9CC64145261A33CF00A1BB60 /* CPUFloat.swift in Sources */,
-				9CC64141261A33CF00A1BB60 /* Engine.swift in Sources */,
-				9CC64130261A33CF00A1BB60 /* Conv.swift in Sources */,
-				9CC64139261A33CF00A1BB60 /* UtilOps.swift in Sources */,
-				9CC6412C261A33CF00A1BB60 /* MemoryOps.swift in Sources */,
-				9CC6411B261A33CF00A1BB60 /* BidirectionalRNN.swift in Sources */,
-				9CC64135261A33CF00A1BB60 /* Shape.swift in Sources */,
-				9CC640FB261A33CE00A1BB60 /* Adadelta.swift in Sources */,
-				9CC640FD261A33CE00A1BB60 /* Optim.swift in Sources */,
-				9CC64114261A33CF00A1BB60 /* Embedding.swift in Sources */,
-				9CC6413A261A33CF00A1BB60 /* Scatter.swift in Sources */,
-				9CC64143261A33CF00A1BB60 /* CPUNumeric.swift in Sources */,
-				9CC6412D261A33CF00A1BB60 /* Allocator.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9CCDC61D26193EE300CA6C09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1417,11 +853,6 @@
 			target = 5E6F7E602368FB6A008CC191 /* BookAPI */;
 			targetProxy = 5E6F7E6E2368FD7C008CC191 /* PBXContainerItemProxy */;
 		};
-		5EA2E3D02056F36100416A35 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5E086DBF2051C5A7004D8D25 /* PlaygroundBook */;
-			targetProxy = 5EA2E3CF2056F36100416A35 /* PBXContainerItemProxy */;
-		};
 		5EA2E3D22056F36300416A35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5EF2F9AA2054BBF300191409 /* BookCore */;
@@ -1431,16 +862,6 @@
 			isa = PBXTargetDependency;
 			target = 5EF2F9AA2054BBF300191409 /* BookCore */;
 			targetProxy = 5EF2F9B42054BDD100191409 /* PBXContainerItemProxy */;
-		};
-		9CC64151261A343300A1BB60 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9CC64057261949FC00A1BB60 /* DL4S */;
-			targetProxy = 9CC64150261A343300A1BB60 /* PBXContainerItemProxy */;
-		};
-		9CD14E76261BFF1D00CCC861 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9CC64057261949FC00A1BB60 /* DL4S */;
-			targetProxy = 9CD14E75261BFF1D00CCC861 /* PBXContainerItemProxy */;
 		};
 		9CD14E79261BFF1D00CCC861 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1586,7 +1007,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1642,7 +1063,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1672,10 +1093,10 @@
 				CODE_SIGN_ENTITLEMENTS = LiveViewTestApp/LiveViewTestApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = CUA3BVMUR5;
 				GCC_DYNAMIC_NO_PIC = NO;
 				INFOPLIST_FILE = LiveViewTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1689,6 +1110,7 @@
 					"\"$(OTHER_FRAMEWORKS_DIR)\"",
 					"$(inherited)",
 				);
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -1699,9 +1121,9 @@
 				CODE_SIGN_ENTITLEMENTS = LiveViewTestApp/LiveViewTestApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = CUA3BVMUR5;
 				INFOPLIST_FILE = LiveViewTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1714,6 +1136,7 @@
 					"\"$(OTHER_FRAMEWORKS_DIR)\"",
 					"$(inherited)",
 				);
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1754,20 +1177,6 @@
 			name = Debug;
 		};
 		9C16616226142DB4004622CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E6F7E6D2368FC9A008CC191 /* ModuleOverridingBuildSettings.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		9CC6405D261949FC00A1BB60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E6F7E6D2368FC9A008CC191 /* ModuleOverridingBuildSettings.xcconfig */;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		9CC6405E261949FC00A1BB60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E6F7E6D2368FC9A008CC191 /* ModuleOverridingBuildSettings.xcconfig */;
 			buildSettings = {
@@ -1850,15 +1259,6 @@
 			buildConfigurations = (
 				9C16616126142DB4004622CF /* Debug */,
 				9C16616226142DB4004622CF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9CC6405C261949FC00A1BB60 /* Build configuration list for PBXNativeTarget "DL4S" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9CC6405D261949FC00A1BB60 /* Debug */,
-				9CC6405E261949FC00A1BB60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
