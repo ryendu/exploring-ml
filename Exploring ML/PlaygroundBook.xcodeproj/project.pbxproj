@@ -16,14 +16,22 @@
 		5E70679F23678DC30094BDEF /* Modules in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5E70679E23678DC00094BDEF /* Modules */; };
 		5EA2E3C02056F35A00416A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA2E3BF2056F35A00416A35 /* AppDelegate.swift */; };
 		5EA2E3CA2056F35B00416A35 /* LiveViewTestAppLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2E3C82056F35B00416A35 /* LiveViewTestAppLaunchScreen.storyboard */; };
-		5EA2E3D42056F36800416A35 /* libBookCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF2F9AB2054BBF300191409 /* libBookCore.a */; };
 		5EA2E3DA2056F8D100416A35 /* PlaygroundBluetooth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA2E3D82056F88700416A35 /* PlaygroundBluetooth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EA2E3DB2056F8D100416A35 /* PlaygroundSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA2E3D72056F88700416A35 /* PlaygroundSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EBEC2F0205B399300975D3F /* LiveViewHost.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBEC2EF205B396500975D3F /* LiveViewHost.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
 		5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF2F9AD2054BBF300191409 /* LiveViewController.swift */; };
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
-		9C16616D26142DD2004622CF /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C16615226142D61004622CF /* EarthView.swift */; };
+		9CAA0ACC261E1196004D94D9 /* SupportingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA0ACB261E1196004D94D9 /* SupportingViews.swift */; };
+		9CAA0AD4261E1326004D94D9 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CAA0AD3261E1326004D94D9 /* OpenSans-Light.ttf */; };
+		9CAA0AD5261E1326004D94D9 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CAA0AD3261E1326004D94D9 /* OpenSans-Light.ttf */; };
+		9CAA0AF7261E2518004D94D9 /* libML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCDC62126193EE300CA6C09 /* libML.a */; };
+		9CAA0AF8261E251D004D94D9 /* libScenes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16615C26142DB4004622CF /* libScenes.a */; };
+		9CAA0AF9261E2522004D94D9 /* libViews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16612B26142BE9004622CF /* libViews.a */; };
+		9CAA0AFA261E2526004D94D9 /* libBookCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF2F9AB2054BBF300191409 /* libBookCore.a */; };
+		9CAA0B0A261E6CA3004D94D9 /* animateStroke.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9CAA0B09261E6CA3004D94D9 /* animateStroke.fsh */; };
+		9CAA0B0B261E6CA3004D94D9 /* animateStroke.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9CAA0B09261E6CA3004D94D9 /* animateStroke.fsh */; };
+		9CB9925B261E9483003636D4 /* libBookAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F7E612368FB6A008CC191 /* libBookAPI.a */; };
 		9CC6415A261A3B4C00A1BB60 /* AIRuleSocietyEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64159261A3B4C00A1BB60 /* AIRuleSocietyEnvironment.swift */; };
 		9CCDC64626193F1C00CA6C09 /* TrainAiRuleSociety.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC63626193F1400CA6C09 /* TrainAiRuleSociety.swift */; };
 		9CD14DC0261A817B00CCC861 /* NNStructureLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DBF261A817B00CCC861 /* NNStructureLiveView.swift */; };
@@ -31,9 +39,6 @@
 		9CD14DD2261A821A00CCC861 /* RocketBoosterLandingLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DD1261A821A00CCC861 /* RocketBoosterLandingLiveView.swift */; };
 		9CD14DDB261A824500CCC861 /* MyFacePuzzleLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DDA261A824500CCC861 /* MyFacePuzzleLiveView.swift */; };
 		9CD14E6C261B85E200CCC861 /* NNStructureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14E6B261B85E200CCC861 /* NNStructureScene.swift */; };
-		9CD14E77261BFF1D00CCC861 /* libML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCDC62126193EE300CA6C09 /* libML.a */; };
-		9CD14E7A261BFF1D00CCC861 /* libScenes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16615C26142DB4004622CF /* libScenes.a */; };
-		9CD14E7D261BFF1D00CCC861 /* libViews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C16612B26142BE9004622CF /* libViews.a */; };
 		9CD14EEC261CF53B00CCC861 /* equation1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD14EEB261CF53B00CCC861 /* equation1.png */; };
 		9CD14EED261CF53B00CCC861 /* equation1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD14EEB261CF53B00CCC861 /* equation1.png */; };
 		9CD41655261661E3003DF8B5 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
@@ -93,26 +98,19 @@
 			remoteGlobalIDString = 5EF2F9AA2054BBF300191409;
 			remoteInfo = Book_Sources;
 		};
-		9CD14E78261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9CCDC62026193EE300CA6C09;
-			remoteInfo = ML;
-		};
-		9CD14E7B261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
+		9CAA0B07261E26FE004D94D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9C16615B26142DB4004622CF;
 			remoteInfo = Scenes;
 		};
-		9CD14E7E261BFF1D00CCC861 /* PBXContainerItemProxy */ = {
+		9CB99259261E9470003636D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9C16612A26142BE9004622CF;
-			remoteInfo = Views;
+			remoteGlobalIDString = 9CCDC62026193EE300CA6C09;
+			remoteInfo = ML;
 		};
 		9CD4166B2616621C003DF8B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -127,13 +125,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5EF2F9AA2054BBF300191409;
 			remoteInfo = BookCore;
-		};
-		9CD4166F2616621C003DF8B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E2A7ADD204F611300F4E17A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C16612A26142BE9004622CF;
-			remoteInfo = Views;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -223,8 +214,11 @@
 		5EF2F9AD2054BBF300191409 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
 		9C16612B26142BE9004622CF /* libViews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViews.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C16615226142D61004622CF /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
 		9C16615C26142DB4004622CF /* libScenes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScenes.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAA0ACB261E1196004D94D9 /* SupportingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingViews.swift; sourceTree = "<group>"; };
+		9CAA0AD3261E1326004D94D9 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		9CAA0AE2261E225D004D94D9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		9CAA0B09261E6CA3004D94D9 /* animateStroke.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = animateStroke.fsh; path = ../../../../../../../Downloads/animateStroke.fsh; sourceTree = "<group>"; };
 		9CC64159261A3B4C00A1BB60 /* AIRuleSocietyEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRuleSocietyEnvironment.swift; sourceTree = "<group>"; };
 		9CCDC62126193EE300CA6C09 /* libML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libML.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CCDC63626193F1400CA6C09 /* TrainAiRuleSociety.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAiRuleSociety.swift; sourceTree = "<group>"; };
@@ -248,10 +242,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD14E77261BFF1D00CCC861 /* libML.a in Frameworks */,
-				9CD14E7A261BFF1D00CCC861 /* libScenes.a in Frameworks */,
-				9CD14E7D261BFF1D00CCC861 /* libViews.a in Frameworks */,
-				5EA2E3D42056F36800416A35 /* libBookCore.a in Frameworks */,
+				9CAA0AF9261E2522004D94D9 /* libViews.a in Frameworks */,
+				9CAA0AF8261E251D004D94D9 /* libScenes.a in Frameworks */,
+				9CAA0AF7261E2518004D94D9 /* libML.a in Frameworks */,
+				9CAA0AFA261E2526004D94D9 /* libBookCore.a in Frameworks */,
+				9CB9925B261E9483003636D4 /* libBookAPI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +457,8 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				9CAA0B09261E6CA3004D94D9 /* animateStroke.fsh */,
+				9CAA0AD3261E1326004D94D9 /* OpenSans-Light.ttf */,
 				9CD14EEB261CF53B00CCC861 /* equation1.png */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
@@ -494,6 +491,7 @@
 				9CD14DC8261A819F00CCC861 /* ImageClassificationLiveView.swift */,
 				9CD14DD1261A821A00CCC861 /* RocketBoosterLandingLiveView.swift */,
 				9CD14DDA261A824500CCC861 /* MyFacePuzzleLiveView.swift */,
+				9CAA0ACB261E1196004D94D9 /* SupportingViews.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -509,7 +507,6 @@
 		9C16615126142D50004622CF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9C16615226142D61004622CF /* EarthView.swift */,
 				9CD14E6B261B85E200CCC861 /* NNStructureScene.swift */,
 			);
 			path = Sources;
@@ -518,6 +515,7 @@
 		9CB1CA5B26192C0300574668 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CAA0AE2261E225D004D94D9 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -596,9 +594,6 @@
 			dependencies = (
 				5E6F7E6B2368FB7D008CC191 /* PBXTargetDependency */,
 				5EA2E3D22056F36300416A35 /* PBXTargetDependency */,
-				9CD14E79261BFF1D00CCC861 /* PBXTargetDependency */,
-				9CD14E7C261BFF1D00CCC861 /* PBXTargetDependency */,
-				9CD14E7F261BFF1D00CCC861 /* PBXTargetDependency */,
 			);
 			name = LiveViewTestApp;
 			productName = LiveViewTestApp;
@@ -632,6 +627,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				9CB9925A261E9470003636D4 /* PBXTargetDependency */,
+				9CAA0B08261E26FE004D94D9 /* PBXTargetDependency */,
 			);
 			name = Views;
 			productName = ViewsModule;
@@ -651,7 +648,6 @@
 			dependencies = (
 				9CD4166C2616621C003DF8B5 /* PBXTargetDependency */,
 				9CD4166E2616621C003DF8B5 /* PBXTargetDependency */,
-				9CD416702616621C003DF8B5 /* PBXTargetDependency */,
 			);
 			name = Scenes;
 			productName = Scenes;
@@ -743,7 +739,9 @@
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				5E551EC52371FC3F00784365 /* Assets.xcassets in Resources */,
 				9CD14EEC261CF53B00CCC861 /* equation1.png in Resources */,
+				9CAA0AD4261E1326004D94D9 /* OpenSans-Light.ttf in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
+				9CAA0B0A261E6CA3004D94D9 /* animateStroke.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,7 +749,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CAA0AD5261E1326004D94D9 /* OpenSans-Light.ttf in Resources */,
 				9CD41655261661E3003DF8B5 /* ManifestPlist.strings in Resources */,
+				9CAA0B0B261E6CA3004D94D9 /* animateStroke.fsh in Resources */,
 				9CD41656261661E3003DF8B5 /* LiveView.storyboard in Resources */,
 				9CD14EED261CF53B00CCC861 /* equation1.png in Resources */,
 				9CD4165C261661E3003DF8B5 /* Assets.xcassets in Resources */,
@@ -812,6 +812,7 @@
 			files = (
 				9CD14DC0261A817B00CCC861 /* NNStructureLiveView.swift in Sources */,
 				9CD14DDB261A824500CCC861 /* MyFacePuzzleLiveView.swift in Sources */,
+				9CAA0ACC261E1196004D94D9 /* SupportingViews.swift in Sources */,
 				9CD14DC9261A819F00CCC861 /* ImageClassificationLiveView.swift in Sources */,
 				9CD14DD2261A821A00CCC861 /* RocketBoosterLandingLiveView.swift in Sources */,
 			);
@@ -822,7 +823,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CD14E6C261B85E200CCC861 /* NNStructureScene.swift in Sources */,
-				9C16616D26142DD2004622CF /* EarthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,20 +863,15 @@
 			target = 5EF2F9AA2054BBF300191409 /* BookCore */;
 			targetProxy = 5EF2F9B42054BDD100191409 /* PBXContainerItemProxy */;
 		};
-		9CD14E79261BFF1D00CCC861 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9CCDC62026193EE300CA6C09 /* ML */;
-			targetProxy = 9CD14E78261BFF1D00CCC861 /* PBXContainerItemProxy */;
-		};
-		9CD14E7C261BFF1D00CCC861 /* PBXTargetDependency */ = {
+		9CAA0B08261E26FE004D94D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9C16615B26142DB4004622CF /* Scenes */;
-			targetProxy = 9CD14E7B261BFF1D00CCC861 /* PBXContainerItemProxy */;
+			targetProxy = 9CAA0B07261E26FE004D94D9 /* PBXContainerItemProxy */;
 		};
-		9CD14E7F261BFF1D00CCC861 /* PBXTargetDependency */ = {
+		9CB9925A261E9470003636D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C16612A26142BE9004622CF /* Views */;
-			targetProxy = 9CD14E7E261BFF1D00CCC861 /* PBXContainerItemProxy */;
+			target = 9CCDC62026193EE300CA6C09 /* ML */;
+			targetProxy = 9CB99259261E9470003636D4 /* PBXContainerItemProxy */;
 		};
 		9CD4166C2616621C003DF8B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -887,11 +882,6 @@
 			isa = PBXTargetDependency;
 			target = 5EF2F9AA2054BBF300191409 /* BookCore */;
 			targetProxy = 9CD4166D2616621C003DF8B5 /* PBXContainerItemProxy */;
-		};
-		9CD416702616621C003DF8B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C16612A26142BE9004622CF /* Views */;
-			targetProxy = 9CD4166F2616621C003DF8B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
