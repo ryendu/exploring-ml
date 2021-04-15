@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 
 
-
-
 public struct BlurView: UIViewRepresentable {
 
     let style: UIBlurEffect.Style
@@ -98,6 +96,7 @@ public struct AnimatedCaptionsView: View{
                     .id("AnimatedCaptionsView"+text)
                     .padding()
                     .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.7)
                 Spacer()
             }
             

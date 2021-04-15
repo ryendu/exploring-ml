@@ -10,15 +10,17 @@ import SpriteKit
 import PlaygroundSupport
 
 public class NNStructureScene: SKScene{
-    public var layers:[[SKShapeNode]] = []
+    var initialSlide: Int
+    var layers:[[SKShapeNode]] = []
     var connections: [[SKShapeNode]] = []
-    public var animationNodes:[SKNode] = []
+    var animationNodes:[SKNode] = []
+    var animatedConnections: [[SKShapeNode]] = []
+    var ellipsis: [SKShapeNode] = []
     var layersShape:[Int]
     let spacing = 19
     let neuronDiameter = 10
-    let verticalPadding:CGFloat = 20
+    let verticalPadding:CGFloat = 80
     var showConnectionsAnimationTimer: Timer? = nil
-    
     
     //animating connections
     var updateStrokeLengthFloat = false
@@ -36,10 +38,24 @@ public class NNStructureScene: SKScene{
             strokeLengthUniform.floatValue = newStrokeLengthFloat
         }
     }
+    
+    //equation
+    var equationNodes: [SKNode] = []
+    var equationImgNode: SKSpriteNode? = nil
+    
+    var maxLayerLen: Int!
+    var maxN: Int!
+    var shiftedDown: Bool = false
+    
+    //mnist
+    var outputLabelNodes: [SKLabelNode] = []
 
     var showDataFlowANimationTimer: Timer? = nil
-    public init(size:CGSize,layerShape:[Int]) {
+    var showTweakWeightsAnimationTimer: Timer? = nil
+    
+    public init(size:CGSize,layerShape:[Int], initialSlide:Int) {
         self.layersShape = layerShape
+        self.initialSlide = initialSlide
         super.init(size: size)
     }
     
@@ -49,13 +65,17 @@ public class NNStructureScene: SKScene{
     
     public override func didMove(to view: SKView) {
         //spawn all the neurons
+        let maxLayerLen = Int(self.size.height-verticalPadding)
+        let maxN = Int(Double(maxLayerLen/spacing).rounded(.down))
+        self.maxLayerLen = maxLayerLen
+        self.maxN = maxN
+        
         self.backgroundColor = .black
         for layerIndex in 0...layersShape.count-1{
             var tmpLayer: [SKShapeNode] = []
             //initialize some variables
-            let maxLayerLen = Int(self.size.height-verticalPadding)
+            
             let layerActualLen = Int(layersShape[layerIndex]) * spacing
-            let maxN = Int(Double(maxLayerLen/spacing).rounded(.down))
             let isOverMaxLen = layerActualLen > maxLayerLen
             //only used if layerActualLen is greater than max layer len
             let beforeQuotaLimit = layersShape[layerIndex]
@@ -68,13 +88,13 @@ public class NNStructureScene: SKScene{
                 let y = getyValueForNeuron(len: layersShape[layerIndex], n: i,isOverMaxLen: isOverMaxLen)
                 let nd = SKShapeNode(ellipseOf: CGSize(width: neuronDiameter, height: neuronDiameter))
                 nd.position = CGPoint(x: Int(x), y: y)
-                nd.fillColor = .gray
+                nd.fillColor = .black
                 nd.strokeColor = .white
                 tmpLayer.append(nd)
                 self.addChild(nd)
             }
             layers.append(tmpLayer)
-            //time to add elipses if some neurons don't fit on screen
+            //time to add ellipsis if some neurons don't fit on screen
             if isOverMaxLen{
                 insertEllipsisAndNum(x:x,num:beforeQuotaLimit)
             }
@@ -88,18 +108,39 @@ public class NNStructureScene: SKScene{
             selector: #selector(self.carryoutAnimation),
             name: .nnStructrueSceneAnimate,
             object: nil)
-        noToppingsAnimation()
+        dispatchAnimation(slide: self.initialSlide)
     }
     
     @objc func carryoutAnimation(notification: NSNotification){
         guard let action = notification.object as? Int else {return}
-        switch action {
+        dispatchAnimation(slide: action)
+    }
+    func dispatchAnimation(slide: Int){
+        switch slide {
         case 0:
             self.noToppingsAnimation()
         case 1:
             self.showDataFlowAnimation()
         case 2:
             self.showConnectionsAnimation()
+        case 3:
+            self.showCalculateNeuronEquation()
+        case 4:
+            self.showAddBiasAndActivationFunctionToEquation()
+        case 5:
+            self.showSlowlyFeedForwardIndividually()
+        case 6:
+            self.showTweakWeightsChangeWeightColorAnimation()
+        case 7:
+            self.animateAndAddInputImageDiagram()
+        case 8:
+            print("no animation for this one :(")
+        case 9:
+            self.addOutputLabels()
+        case 10:
+            self.animateAndRunMNIST()
+        case 11:
+            print("")
         default:
             self.endAllAnimations()
             print("Yoo Implement this action")
@@ -121,7 +162,9 @@ public class NNStructureScene: SKScene{
                         path.addLine(to: CGPoint(x: CGFloat(node2i.position.x - CGFloat(neuronDiameter/2)-1), y: CGFloat(node2i.position.y)))
                         line.path = path.cgPath
                         line.strokeColor = UIColor.white
-                        line.lineWidth = 0.01
+                        line.isAntialiased = true
+                        line.lineWidth = 0.8
+                        line.alpha = 1
                         tmpConnections.append(line)
                         self.addChild(line)
                     }
@@ -131,7 +174,7 @@ public class NNStructureScene: SKScene{
         }
     }
     
-    ///finds the distance between two sprite nodes
+    ///finds the distance between two nodes
     private func distanceBetweenNodes(n1:SKNode,n2:SKNode) -> CGFloat{
         let x = n2.position.x - n1.position.x
         let y = n2.position.y - n1.position.y
@@ -146,18 +189,32 @@ public class NNStructureScene: SKScene{
         let maxLayerLen = Int(self.size.height-self.verticalPadding)
         let maxN = Int(Double(maxLayerLen/spacing).rounded(.down))
         //where the ellipsis can start on the y axis.
-        let distanceInLayerStart = spacing * (maxN / 2) + (neuronDiameter) + (extraPaddingEach)
+        
+        let niceRatio = Double(self.verticalPadding) / 60
+        var distanceInLayerStart = Double(Double(spacing) * ((Double(maxN)) / 2.0 - niceRatio))
+        distanceInLayerStart = distanceInLayerStart + Double(neuronDiameter) + Double(extraPaddingEach) + Double(self.verticalPadding)
         //where the ellipsis ends on the y axis.
-        let distanceInLayerEnd = spacing * (maxN / 2 + 2) - (neuronDiameter) - (extraPaddingEach)
+        var distanceInLayerEnd = Double(Double(spacing) * ((Double(maxN)) / 2.0 - niceRatio))
+        
+        distanceInLayerEnd = distanceInLayerEnd - Double(neuronDiameter) - Double(extraPaddingEach) + Double(self.verticalPadding)
         let ellipsisAllocatedTotalSpaceY = distanceInLayerEnd - distanceInLayerStart
         
         //initializes ellipsis
-        let ellipsisPart1 = SKShapeNode(ellipseIn: CGRect(x: Double(x), y: Double(distanceInLayerStart + (ellipsisAllocatedTotalSpaceY / 3 * 1)), width: 1.5, height: 1.5))
+        let ellipsisPart1 = SKShapeNode(ellipseOf: CGSize(width: 1.5, height: 1.5))
         ellipsisPart1.fillColor = .white
-        let ellipsisPart2 = SKShapeNode(ellipseIn: CGRect(x: Double(x), y: Double(distanceInLayerStart + (ellipsisAllocatedTotalSpaceY / 3 * 2)), width: 1.5, height: 1.5))
-        ellipsisPart1.fillColor = .white
-        let ellipsisPart3 = SKShapeNode(ellipseIn: CGRect(x: Double(x), y: Double(distanceInLayerStart + (ellipsisAllocatedTotalSpaceY / 3 * 3)), width: 1.5, height: 1.5))
-        ellipsisPart1.fillColor = .white
+        ellipsisPart1.position = CGPoint(x: Double(x), y: Double(distanceInLayerStart + (ellipsisAllocatedTotalSpaceY / 3 * 1)))
+        
+        let ellipsisPart2 = SKShapeNode(ellipseOf: CGSize(width: 1.5, height: 1.5))
+        ellipsisPart2.fillColor = .white
+        ellipsisPart2.position = CGPoint(x: Double(x), y: Double(distanceInLayerStart + (ellipsisAllocatedTotalSpaceY / 3 * 2)))
+        
+        let ellipsisPart3 = SKShapeNode(ellipseOf: CGSize(width: 1.5, height: 1.5))
+        ellipsisPart3.fillColor = .white
+        ellipsisPart3.position = CGPoint(x: Double(x), y: Double(distanceInLayerStart + (ellipsisAllocatedTotalSpaceY / 3 * 3)))
+        
+        self.ellipsis.append(ellipsisPart3)
+        self.ellipsis.append(ellipsisPart2)
+        self.ellipsis.append(ellipsisPart1)
         self.addChild(ellipsisPart1)
         self.addChild(ellipsisPart2)
         self.addChild(ellipsisPart3)
@@ -202,9 +259,15 @@ public class NNStructureScene: SKScene{
         if self.updateStrokeLengthFloat{
             if strokeLengthFloat < 1.0 {
                 // to edit the speed of the effectr, change this add rate
-                strokeLengthFloat += 0.02
+                strokeLengthFloat += 0.025
             }
         }
+    }
+    
+    func getRandomGrayscaleColor()->UIColor{
+        let random = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        let color = UIColor(white: random, alpha: 1)
+        return color
     }
     
     //MARK: Animation Functions
@@ -219,19 +282,50 @@ public class NNStructureScene: SKScene{
         if showConnectionsAnimationTimer != nil{
             showConnectionsAnimationTimer!.invalidate()
         }
+        if showTweakWeightsAnimationTimer != nil{
+            showTweakWeightsAnimationTimer!.invalidate()
+        }
         //make all neurons gray again
         for il in layers{
             for i in il{
-                i.fillColor = .gray
+                i.fillColor = .black
+            }
+        }
+        self.removeChildren(in: self.outputLabelNodes)
+        for layer in self.connections{
+            for i in layer{
+                i.strokeColor = .white
             }
         }
         updateStrokeLengthFloat = false
         
-        for il in connections{
-            for i in il{
-                i.removeAllChildren()
-            }
+        for il in animatedConnections{
+            self.removeChildren(in: il)
         }
+        self.removeChildren(in: self.equationNodes)
+        
+        if self.shiftedDown{
+            for i in self.children{
+                i.run(SKAction.moveBy(x: 0, y: 10, duration: 1))
+            }
+            self.shiftedDown = false
+        }
+        
+        //for the cases where coloring of things are delayed
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.81, execute: {
+            for il in self.layers{
+                for i in il{
+                    i.fillColor = .black
+                }
+            }
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.11, execute: {
+            for layer in self.connections{
+                for i in layer{
+                    i.strokeColor = .white
+                }
+            }
+        })
     }
     
     ///adds 2 emojis and bounces them around
@@ -265,17 +359,64 @@ public class NNStructureScene: SKScene{
         if self.layers.count > 0{
             showDataFlowANimationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { val in
             for i in self.layers[currentAnimatingLayer]{
-                i.fillColor = i.fillColor == .yellow ? .gray : .yellow
+                
+                if !(i.fillColor == UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1) ){
+                    i.fillColor = .black
+                }else {
+                    print("Whiting")
+                    i.fillColor = .white
+                    
+                }
             }
             if currentAnimatingLayer != 0 {
                 for i in self.layers[currentAnimatingLayer - 1]{
-                    i.fillColor = .gray
+                    i.fillColor = .black
                 }
             }else {
                 for i in self.layers.last!{
-                    i.fillColor = .gray
+                    i.fillColor = .black
                 }
             }
+            
+            
+            if currentAnimatingLayer + 1 < self.layers.count {
+                currentAnimatingLayer += 1
+            } else {
+                currentAnimatingLayer = 0
+            }
+        })
+        }else {
+            
+        }
+    }
+    
+    ///shows the model feeding forward its values. only neuron btw
+    func showNeuronsPassingDataAnimation(){
+        self.endAllAnimations()
+        var currentAnimatingLayer = 0
+        if self.layers.count > 0{
+            showDataFlowANimationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { val in
+            for i in self.layers[currentAnimatingLayer]{
+                
+                if !(i.fillColor == UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1) ){
+                    i.fillColor = .black
+                    
+                }else {
+                    print("Whiting")
+                    i.fillColor = self.getRandomGrayscaleColor()
+                    
+                }
+            }
+            if currentAnimatingLayer != 0 {
+                for i in self.layers[currentAnimatingLayer - 1]{
+                    i.fillColor = .black
+                }
+            }else {
+                for i in self.layers.last!{
+                    i.fillColor = .black
+                }
+            }
+            
             
             if currentAnimatingLayer + 1 < self.layers.count {
                 currentAnimatingLayer += 1
@@ -297,10 +438,8 @@ public class NNStructureScene: SKScene{
         if self.connections.count > 0{
             showConnectionsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] val in
                 if currentAnimatingLayer == 0 {
-                    for il in connections{
-                        for i in il{
-                            i.removeAllChildren()
-                        }
+                    for il in animatedConnections{
+                        self.removeChildren(in: il)
                     }
                 }
 //                if let i = self.connections.first?.first{
@@ -310,11 +449,11 @@ public class NNStructureScene: SKScene{
                 self.strokeShader = shaderWithFilename( "animateStroke", fileExtension: "fsh", uniforms: uniforms )
                 updateStrokeLengthFloat = true
                 strokeLengthFloat = 0.0
-                
+                var tmpConnections: [SKShapeNode] = []
                 let li = currentAnimatingLayer
                 for node1i in 0...self.layers[li].count - 1{
                     if self.connections[li].count > 0{
-                        self.connections[li][node1i].removeAllChildren()
+//                        self.removeChildren(in: [self.animatedConnections[li][node1i]])
                         let node1 = self.layers[li][node1i]
                         if li < layers.count - 1{
                             for node2 in layers[li + 1]{
@@ -324,20 +463,241 @@ public class NNStructureScene: SKScene{
                                 path.move(to: CGPoint(x: CGFloat(node1.position.x + CGFloat(neuronDiameter/2)+1), y: CGFloat(node1.position.y)))
                                 path.addLine(to: CGPoint(x: CGFloat(node2.position.x - CGFloat(neuronDiameter/2)-1), y: CGFloat(node2.position.y)))
                                 line.path = path.cgPath
-                                line.lineWidth = 0.01
+                                line.lineWidth = 0.3
+                                line.isAntialiased = false
+                                line.alpha = 1
+                                self.addChild(line)
+                                tmpConnections.append(line)
                                 line.strokeShader = strokeShader
-                                self.connections[li][node1i].addChild(line)
+                                self.connections[li][node1i].calculateAccumulatedFrame()
                             }
                         }
                     }
                 }
-                    if currentAnimatingLayer + 1 < self.layers.count {
-                        currentAnimatingLayer += 1
-                    } else {
-                        currentAnimatingLayer = 0
-                    }
+                self.animatedConnections.append(tmpConnections)
+                if currentAnimatingLayer + 1 < self.layers.count {
+                    currentAnimatingLayer += 1
+                } else {
+                    currentAnimatingLayer = 0
+                }
             })
         }
+    }
+    
+    func shiftAllDown(){
+        self.shiftedDown = true
+        for i in self.children{
+            i.run(SKAction.moveBy(x: 0, y: -10, duration: 1))
+        }
+    }
+    
+    
+    ///show the equation to calcaulate a non-input neuron's value
+    func showCalculateNeuronEquation(){
+        self.endAllAnimations()
+        // first shrink the nn a bit
+        shiftAllDown()
+        // copy the first node of the second layer plus all nodes from first layer, then move and transform to equation
+        guard let firstNeuronLayer = self.layers.first else { return }
+        guard let secondLayerFirstNeuron = self.layers[1].last else { return }
+        guard let firstLayerLastNeuron = firstNeuronLayer.last else {return}
+        let y = self.size.height - (verticalPadding / 2)
+        let xShift:CGFloat = 80
+        var inodes: [SKShapeNode] = []
+        //the inputs to be added together, are equation components
+        if !(firstNeuronLayer.count > 3) {
+            fatalError("Ay ay, i'm sorry but please make sure you have atleast 3 neurons for the first layer : (.")
+        }
+        //last 3 neurons before elipsis
+        for indx in firstNeuronLayer.count / 2 - 1 - 3...firstNeuronLayer.count / 2 - 1{
+            let i = firstNeuronLayer[indx]
+            let nd = SKShapeNode(ellipseOf: CGSize(width: neuronDiameter, height: neuronDiameter))
+            nd.position = CGPoint(x: i.position.x, y: i.position.y)
+            nd.fillColor = .white
+            self.addChild(nd)
+            inodes.append(nd)
+            self.equationNodes.append(nd)
+            nd.run(SKAction.moveTo(y: y, duration: 1.5))
+            nd.run(SKAction.moveTo(x: nd.position.y + xShift, duration: 1.5))
+            nd.run(SKAction.sequence([SKAction.wait(forDuration: 1.5),SKAction.fadeOut(withDuration: 1)]))
+        }
+        
+        //color code the input layer neurons
+        for i in firstNeuronLayer{
+            i.fillColor = .white
+        }
+//add more stuff
+        
+        let firstLindx:Int = maxN / 2 + 2
+        let notUsedNeuronsDistance = (firstLayerLastNeuron.position.y + xShift) - (firstNeuronLayer[firstLindx].position.y + xShift)
+        print("Not used neuron distance: \(notUsedNeuronsDistance)")
+        //add what we are finding
+        let res = SKShapeNode(ellipseOf: CGSize(width: neuronDiameter, height: neuronDiameter))
+        res.position = CGPoint(x: secondLayerFirstNeuron.position.x, y: secondLayerFirstNeuron.position.y)
+        secondLayerFirstNeuron.fillColor = .blue
+        res.fillColor = .blue
+        self.addChild(res)
+        self.equationNodes.append(res)
+        res.run(SKAction.moveTo(y: y, duration: 1.5))
+        res.run(SKAction.moveTo(x: res.position.y + xShift + CGFloat(self.spacing*2) - notUsedNeuronsDistance, duration: 1.5))
+        
+        //add equal sign
+        let equalSign = SKLabelNode(text:"=")
+        equalSign.fontSize = 15
+        equalSign.position = CGPoint(x: secondLayerFirstNeuron.position.x, y: secondLayerFirstNeuron.position.y)
+        equalSign.color = .white
+        self.addChild(equalSign)
+        self.equationNodes.append(equalSign)
+        equalSign.run(SKAction.moveTo(y: y - 5, duration: 1.5))
+        equalSign.run(SKAction.moveTo(x: res.position.y + xShift + CGFloat(self.spacing) - notUsedNeuronsDistance, duration: 1.5))
+        
+        
+        //add equation
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.9, execute: {
+            let nd = SKSpriteNode(imageNamed: "weightedsum")
+            nd.position = CGPoint(x: res.position.x - CGFloat(self.spacing * 9), y: res.position.y )
+            nd.setScale(0.5)
+            self.addChild(nd)
+            self.equationNodes.append(nd)
+            self.equationImgNode = nd
+        })
+        
+        
+    }
+    
+    ///adds bias and activation func to the equation
+    func showAddBiasAndActivationFunctionToEquation(){
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.91, execute: {
+            guard let ein = self.equationImgNode else {
+                self.showCalculateNeuronEquation()
+                self.showAddBiasAndActivationFunctionToEquation()
+                return
+            }
+            let equationFullTexture = SKTexture(imageNamed: "weightedSumPlusBiasAndActivation")
+            ein.run(SKAction.sequence([SKAction.wait(forDuration: 1.5),SKAction.setTexture(equationFullTexture),SKAction.scale(by: 1.2, duration: 1),SKAction.moveBy(x: CGFloat(self.spacing), y: 0, duration: 1)]))
+        })
+    }
+    
+    ///animates the network calculating every individual neuron
+    func showSlowlyFeedForwardIndividually(){
+        self.endAllAnimations()
+        var currentAnimatingLayer = 0
+        var node2i = 0
+        if self.layers.count > 0{
+            showDataFlowANimationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] val in
+                if currentAnimatingLayer == 0{
+                    for i in self.layers[currentAnimatingLayer]{
+                        
+                        if !(i.fillColor == UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1) ){
+//                            i.fillColor = .black
+                        }else {
+                            i.fillColor = self.getRandomGrayscaleColor()
+                        }
+                    }
+                }
+                //if not last layer, then animate each neuron thing
+                if currentAnimatingLayer < self.layers.count - 1 {
+                    self.strokeLengthKey = "u_current_percentage"
+                    strokeLengthUniform = SKUniform( name: self.strokeLengthKey, float: 0.0 )
+                    let uniforms: [SKUniform] = [self.strokeLengthUniform]
+                    self.strokeShader = shaderWithFilename( "animateStroke", fileExtension: "fsh", uniforms: uniforms )
+                    updateStrokeLengthFloat = true
+                    strokeLengthFloat = 0.0
+                    var tmpConnections: [SKShapeNode] = []
+                    let li = currentAnimatingLayer
+                    let node2Count = layers[li + 1].count
+                    let node2 = layers[li+1][node2i]
+                        for conlayer in self.animatedConnections{
+                            self.removeChildren(in: conlayer)
+                        }
+                    if self.connections[li].count > 0{
+                        if li < layers.count - 1{
+                            for node1i in 0...self.layers[li].count - 1{
+                                let node1 = self.layers[li][node1i]
+                                // Create line with SKShapeNode
+                                let line = SKShapeNode()
+                                let path = UIBezierPath()
+                                path.move(to: CGPoint(x: CGFloat(node1.position.x + CGFloat(neuronDiameter/2)+1), y: CGFloat(node1.position.y)))
+                                path.addLine(to: CGPoint(x: CGFloat(node2.position.x - CGFloat(neuronDiameter/2)-1), y: CGFloat(node2.position.y)))
+                                line.path = path.cgPath
+                                line.lineWidth = 1
+                                line.isAntialiased = true
+                                line.alpha = 1
+                                self.addChild(line)
+                                tmpConnections.append(line)
+                                line.strokeShader = strokeShader
+                                self.connections[li][node1i].calculateAccumulatedFrame()
+                            }
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
+                            node2.fillColor = getRandomGrayscaleColor()
+                        })
+                    }
+                    self.animatedConnections.append(tmpConnections)
+                    if (node2i < node2Count - 1) {
+                        node2i += 1
+                    }else {
+                        node2i = 0
+                        currentAnimatingLayer += 1
+                    }
+                } else {
+                    node2i = 0
+                    currentAnimatingLayer = 0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        for il in layers{
+                            for i in il{
+                                i.fillColor = .black
+                            }
+                        }
+                    })
+                }
+        })
+        }
+    }
+    
+    ///shows the changing of the color of connections indicating tweaking weights
+    func showTweakWeightsChangeWeightColorAnimation(){
+        self.endAllAnimations()
+        showTweakWeightsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: {_ in
+            for layer in self.connections{
+                for i in layer{
+                    i.run(SKAction.strokeColorTransition(to: self.getRandomGrayscaleColor()))
+                }
+            }
+        })
+    }
+    
+    ///adds a diagram of the input 28by28 image
+    func animateAndAddInputImageDiagram(){
+        guard let firstNeuronLayer = self.layers.first else {
+            fatalError("um. where is the neural network??????")
+        }
+        for i in firstNeuronLayer{
+            i.run(SKAction.fillColorTransition(to: self.getRandomGrayscaleColor()))
+        }
+    }
+    
+    ///adds labels to each of the output neurons 0 - 9
+    func addOutputLabels(){
+        guard let lastNeuronLayer = self.layers.last else { return }
+        for i in 0...lastNeuronLayer.count - 1{
+            let neuron = lastNeuronLayer[i]
+            let label = SKLabelNode(text: "\(i)")
+            label.fontSize = 10
+            label.position = CGPoint(x: neuron.position.x + 10, y: neuron.position.y - 3)
+            self.addChild(label)
+            self.outputLabelNodes.append((label))
+        }
+    }
+    
+    ///shows the neural network predicting MNIST in action.
+    func animateAndRunMNIST(){
+        self.endAllAnimations()
+    }
+    
+    ///let the user draw a number from 1-0 and show the model working to predict
+    func letUserTestMNIST(){
+        self.endAllAnimations()
     }
 }
 
@@ -356,116 +716,64 @@ public func shaderWithFilename( _ filename: String?, fileExtension: String?, uni
 }
 
 
+func linearInterpolation(a: CGFloat, b: CGFloat, frac : CGFloat) -> CGFloat{
+    return (b-a) * frac + a
+}
 
+struct ColorComponents {
+    var red = CGFloat(0)
+    var green = CGFloat(0)
+    var blue = CGFloat(0)
+    var alpha = CGFloat(0)
+}
 
+extension UIColor {
+    func toComponents() -> ColorComponents {
+        var components = ColorComponents()
+        getRed(&components.red, green: &components.green, blue: &components.blue, alpha: &components.alpha)
+        return components
+    }
+}
 
-//MARK: keeping old code just incase
+extension SKAction {
+    static func strokeColorTransition(to: UIColor, duration: Double = 0.4) -> SKAction{
+        return SKAction.customAction(withDuration: duration, actionBlock: { (node: SKNode!, elapsedTime: CGFloat) -> Void in
+            guard let node = node as? SKShapeNode else { fatalError("storkeColorTransition is only available for SKShapeNode")}
+            let fraction = CGFloat(elapsedTime / CGFloat(duration))
+            let startColorComponents = node.strokeColor.toComponents()
+            let endColorComponents = to.toComponents()
+            let transColor = UIColor(red: linearInterpolation(a: startColorComponents.red, b: endColorComponents.red, frac: fraction),
+                                     green: linearInterpolation(a: startColorComponents.green, b: endColorComponents.green, frac: fraction),
+                                     blue: linearInterpolation(a: startColorComponents.blue, b: endColorComponents.blue, frac: fraction),
+                                     alpha: linearInterpolation(a: startColorComponents.alpha, b: endColorComponents.alpha, frac: fraction))
+            node.strokeColor = transColor
+        }
+        )
+    }
+    static func fillColorTransition(to: UIColor, duration: Double = 0.4) -> SKAction{
+        return SKAction.customAction(withDuration: duration, actionBlock: { (node: SKNode!, elapsedTime: CGFloat) -> Void in
+            guard let node = node as? SKShapeNode else { fatalError("storkeColorTransition is only available for SKShapeNode")}
+            let fraction = CGFloat(elapsedTime / CGFloat(duration))
+            let startColorComponents = node.fillColor.toComponents()
+            let endColorComponents = to.toComponents()
+            let transColor = UIColor(red: linearInterpolation(a: startColorComponents.red, b: endColorComponents.red, frac: fraction),
+                                     green: linearInterpolation(a: startColorComponents.green, b: endColorComponents.green, frac: fraction),
+                                     blue: linearInterpolation(a: startColorComponents.blue, b: endColorComponents.blue, frac: fraction),
+                                     alpha: linearInterpolation(a: startColorComponents.alpha, b: endColorComponents.alpha, frac: fraction))
+            node.fillColor = transColor
+        }
+        )
+    }
+}
 
-
-//iteration2
-//func showConnectionsAnimation(){
-//    self.endAllAnimations()
-//    print("Animating Connections")
-//
-//    var currentAnimatingLayer = 0
-//    if self.connections.count > 0{
-//        showConnectionsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { [self] val in
-//            for i in self.connections[currentAnimatingLayer]{
-////                if let i = self.connections.first?.first{
-//                guard let ogPath = i.path else { return }
-//                self.strokeLengthKey = "u_current_percentage"
-//                strokeLengthUniform = SKUniform( name: self.strokeLengthKey, float: 0.0 )
-//                let uniforms: [SKUniform] = [self.strokeLengthUniform]
-//                self.strokeShader = shaderWithFilename( "animateStroke", fileExtension: "fsh", uniforms: uniforms )
-//                strokeLengthFloat = 0.0
-//                let path1 = CGMutablePath()
-//                let startPoint = CGPoint(x: ogPath.boundingBoxOfPath.minX, y: ogPath.boundingBoxOfPath.minY)
-//                let endPoint = CGPoint(x: ogPath.boundingBoxOfPath.maxX, y: ogPath.boundingBoxOfPath.maxY)
-//                path1.move( to: startPoint)
-//                path1.addLine( to: endPoint)
-//                path1.closeSubpath()
-////                    updateStrokeLengthFloat = true
-//                let shapeNode = SKShapeNode( path: path1 )
-//                shapeNode.lineWidth = 0.01
-//                shapeNode.strokeColor = .yellow
-////                    shapeNode.lineCap = .round
-//                i.removeAllChildren()
-//                i.addChild(shapeNode)
-////                    shapeNode.strokeShader = strokeShader
-////                    i.calculateAccumulatedFrame()
-//
-//            }
-//                if currentAnimatingLayer + 1 < self.layers.count {
-//                    currentAnimatingLayer += 1
-//                } else {
-//                    currentAnimatingLayer = 0
-//                }
-//        })
-//    }
-//}
-
-//iteration1
-//func showConnectionsAnimation(){
-//    self.endAllAnimations()
-//    print("Animating Connections")
-//    var currentAnimatingLayer = 0
-//    if self.connections.count > 0{
-//        showConnectionsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { val in
-//        for i in self.connections[currentAnimatingLayer]{
-////                i.strokeColor = i.strokeColor == .yellow ? .white : .yellow
-//
-//
-//            let path1 = UIBezierPath()
-//            guard let ogPath = i.path else {return}
-//            path1.move(to: CGPoint(x: ogPath.boundingBoxOfPath.minX, y: ogPath.boundingBoxOfPath.minY))
-//            path1.addLine(to: CGPoint(x: ogPath.boundingBoxOfPath.maxX, y: ogPath.boundingBoxOfPath.maxY))
-//
-//
-//
-//            let path2 = UIBezierPath()
-//            path2.move(to: CGPoint(x: ogPath.boundingBoxOfPath.minX, y: ogPath.boundingBoxOfPath.minY))
-//            path2.addLine(to: CGPoint(x: (ogPath.boundingBoxOfPath.minX + ogPath.boundingBoxOfPath.midX)/10, y: (ogPath.boundingBoxOfPath.minY + ogPath.boundingBoxOfPath.midY)/10))
-//
-//            let casl = CAShapeLayer()
-//            casl.path = path1.cgPath
-//            casl.fillColor = UIColor.clear.cgColor
-//
-//            let animation = CABasicAnimation(keyPath: "strokeEnd")
-//            animation.fromValue = path1.cgPath
-//            animation.toValue = path2.cgPath
-//            animation.duration = 2
-//            animation.isRemovedOnCompletion = false
-//
-//
-//            let line = SKShapeNode(path: path1.cgPath)
-//            line.strokeColor = UIColor.yellow
-//            line.fillColor = UIColor.yellow
-//            line.lineWidth = 5
-//            self.addChild(line)
-//
-//            casl.add(animation, forKey: "prepanimation")
-//            let ska = SKAction.customAction(withDuration: animation.duration, actionBlock: { (node, timeDuration) in
-//                if let node = node as? SKShapeNode {
-//                    node.path = casl.presentation()?.path
-//                }
-//            })
-//            line.run(ska)
-//        }
-//        if currentAnimatingLayer != 0 {
-//            for i in self.connections[currentAnimatingLayer - 1]{
-//                i.strokeColor = .white
-//            }
-//        }else {
-//            for i in self.connections.last!{
-//                i.strokeColor = .white
-//            }
-//        }
-//
-//        if currentAnimatingLayer + 1 < self.connections.count {
-//            currentAnimatingLayer += 1
-//        } else {
-//            currentAnimatingLayer = 0
-//        }
-//    })
-//    }
-//}
+extension SKSpriteNode {
+    func drawBorder(color: UIColor, width: CGFloat) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            let shapeNode = SKShapeNode(rectOf: self.size)
+            shapeNode.fillColor = .clear
+            shapeNode.strokeColor = color
+            shapeNode.lineWidth = width
+            self.addChild(shapeNode)
+        })
+    }
+}
