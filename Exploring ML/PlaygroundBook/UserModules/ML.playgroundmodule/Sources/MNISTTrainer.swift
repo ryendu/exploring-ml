@@ -13,43 +13,40 @@ import DL4S
 public class MNISTTrainer{
     let model = Sequential {
         Flatten<Float,CPU>()
-        Dense<Float, CPU>(inputSize: 724, outputSize: 14)
+        Dense<Float, CPU>(inputSize: 784, outputSize: 14)
         Relu<Float, CPU>()
          Dense<Float, CPU>(inputSize: 14, outputSize: 14)
 
          Dense<Float, CPU>(inputSize: 14, outputSize: 14)
         Relu<Float, CPU>()
         Dense<Float, CPU>(inputSize: 14, outputSize: 10)
-        LogSoftmax<Float, CPU>()
+        Softmax<Float, CPU>()
      }
     var x_train:Tensor<Float, CPU>
     var y_train:Tensor<Int32, CPU>
+    var optimizer: Adam<Sequential<Sequential<Sequential<Flatten<Float, CPU>, Dense<Float, CPU>>, Sequential<Relu<Float, CPU>, Dense<Float, CPU>>>, Sequential<Sequential<Dense<Float, CPU>, Relu<Float, CPU>>, Sequential<Dense<Float, CPU>, Softmax<Float, CPU>>>>>
     public init (){
+        print("INITIZLIZING TRAINER")
         //get dataset
-        self.x_train = Tensor<Float,CPU>([1,2,3,4,5])
-        self.y_train = Tensor<Int32,CPU>([1,2,3,4,5])
-//        let documentsURL = Bundle.main.path(forResource: "img_13831", ofType: "jpg", inDirectory: "trainingSet/trainingSet/0")
-//        let urls = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: "trainingSet/0")
-//        let urls = Bundle(for: type(of: self)).path(forResource: "trainingSet", ofType: nil)
-        let pth = Bundle.main.resourcePath! + "/PrivateResources/trainingSet/0"
-        let urls = Bundle.main.paths(forResourcesOfType: "jpg", inDirectory: pth)
-        print("SAMPLE IMAGE PTHs: \(urls)")
-//        print("RESOURCE PATH is \(Bundle.main.resourcePath)")
-//        let indxOfImgToShow = Int.random(in: 0...(documentsURL.count - 1))
-//        if let inputImageToShow = UIImage(contentsOfFile: documentsURL[indxOfImgToShow]) {
-//
-//        }
-    }
-    func getDataset(){
-        // Single iteration of minibatch gradient descent
-//        let batch: Tensor<Float, CPU> = ... // shape: [batchSize, 1, 28, 28]
-//        let y_true: Tensor<Int32, CPU> = ... // shape: [batchSize]
+        var x_train_:[[Float]]=[]
+        var y_train_:[Int32]=[]
+        for cate in 0...9{
+            for i in 0...60{
+                if let pthOfImg = Bundle.main.path(forResource: "mnisttrain_\(cate)_\(i)", ofType: "jpg", inDirectory: nil), let img = UIImage(contentsOfFile: pthOfImg),let cgim = img.cgImage,let tensor = Tensor<Float, CPU>(cgim) {
+                    x_train_.append(tensor.elements)
+                    y_train_.append(Int32(cate))
+                }
+            }
+        }
+        self.x_train = Tensor<Float, CPU>(x_train_)
+        self.y_train = Tensor<Int32, CPU>(y_train_)
+        print("X TRAIN GOT SHAPE: \(self.x_train.shape), Y TRAIN GOT SHAPE: \(self.y_train.shape)")
+        self.optimizer = Adam(model: model, learningRate: 0.001)
+        
     }
     ///train the model
     public func train(epochs:Int){
-        var optimizer = Adam(model: model, learningRate: 0.001)
         for epoch in 1...epochs{
-            //            use optimizer.model, not model
             let pred = optimizer.model(self.x_train)
             for i in self.model.parameters{
                 print(i.count)
@@ -57,14 +54,35 @@ public class MNISTTrainer{
             let loss = categoricalNegativeLogLikelihood(expected: self.y_train, actual: pred)
             let gradients = loss.gradients(of: optimizer.model.parameters)
             optimizer.update(along: gradients)
-            print("EPOCH \(epoch) Finished!!")
+            print("EPOCH \(epoch) Finished with loss: \(loss)")
+            //get weights
+            NotificationCenter.default.post(name: .updateWeights,object: self.optimizer.model.parameters)
         }
     }
     ///simply make a prediction
-//    public func predict(input:CGImage) -> String?{
-//        let output = try? model.prediction(input: mnistmodelInput(input_1With: input))
-//        return output?.classLabel ?? "uhoh something went wrong"
-//    }
+    public func predict(input:CGImage) -> String?{
+        let classes_ = [0,1,2,3,4,5,6,7,8,9]
+        guard let x_ = Tensor<Float,CPU>(input) else {return "error parsing image"}
+        let out = self.optimizer.model(x_)
+        print("Softmax results: \(out.elements)")
+        NotificationCenter.default.post(name: .updateOutputNeuronValues, object: out.elements)
+        return "\(classes_[out.argmax()])"
+    }
     ///make a prediction while sending notification center updates to the scene telling it to update its nn diagram with the neuron's activations that prediction func got
     public func predictWithAnimation(input:CGImage, gotPred:(String)->Void){}
+}
+
+public extension Notification.Name {
+    static var nnStructrueSceneAnimate: Notification.Name {
+        return Notification.Name("nnStructrueSceneAnimate")
+    }
+    static var updateWeights: Notification.Name {
+        return Notification.Name("updateWeights")
+    }
+    static var updateOutputNeuronValues: Notification.Name {
+        return Notification.Name("updateOutputNeuronValues")
+    }
+    static var updateInputNeuronValues: Notification.Name {
+        return Notification.Name("updateInputNeuronValues")
+    }
 }

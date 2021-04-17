@@ -64,14 +64,10 @@ public struct AnimatedCaptionsView: View{
                     }, label: {
                         Image(systemName: "arrow.backward.circle.fill")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
                             .padding()
                             .foregroundColor(.white)
                     })
-                    Spacer()
-                    
-                    Text("Tap Anywhere down here for Next")
-                    
                     Spacer()
                     
                     Button(action: {
@@ -83,7 +79,7 @@ public struct AnimatedCaptionsView: View{
                     }, label: {
                         Image(systemName: "arrow.forward.circle.fill")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
                             .padding()
                             .foregroundColor(.white)
                     }).scaleEffect(CGSize(width: self.animation ? 1.5 : 1, height: self.animation ? 1.5 : 1)).opacity(Double(self.animation ? 1 : 0.75))

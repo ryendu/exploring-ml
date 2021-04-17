@@ -8,6 +8,8 @@
 import Foundation
 import SpriteKit
 import PlaygroundSupport
+import DL4S
+import ML
 
 public class NNStructureScene: SKScene{
     var initialSlide: Int
@@ -64,6 +66,7 @@ public class NNStructureScene: SKScene{
     }
     
     public override func didMove(to view: SKView) {
+        print("LOADED")
         //spawn all the neurons
         let maxLayerLen = Int(self.size.height-verticalPadding)
         let maxN = Int(Double(maxLayerLen/spacing).rounded(.down))
@@ -103,17 +106,71 @@ public class NNStructureScene: SKScene{
             
         }
         addConnections(layers:layers)
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.carryoutAnimation),
             name: .nnStructrueSceneAnimate,
             object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.updateWeights),
+            name: .updateWeights,
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.updateOutputNeurons),
+            name: .updateOutputNeuronValues,
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.updateInputNeurons),
+            name: .updateInputNeuronValues,
+            object: nil)
+        //updateOutputNeuronValues
         dispatchAnimation(slide: self.initialSlide)
     }
     
     @objc func carryoutAnimation(notification: NSNotification){
         guard let action = notification.object as? Int else {return}
         dispatchAnimation(slide: action)
+    }
+    @objc func updateWeights(notification: NSNotification){
+        guard let params = notification.object as? [Tensor<Float,CPU>] else {return}
+        let _i_t_1 = params[0]
+        let _1_t_2 = params[2]
+        let _2_t_3 = params[4]
+        for i in 0...connections[0].count - 1{
+            connections[0][i].run(SKAction.strokeColorTransition(to: floatToGrayscaleUIColor(_i_t_1.elements[i])))
+        }
+        for i in 0...connections[1].count - 1{
+            connections[1][i].run(SKAction.strokeColorTransition(to: floatToGrayscaleUIColor(_1_t_2.elements[i])))
+        }
+        for i in 0...connections[2].count - 1{
+            connections[2][i].run(SKAction.strokeColorTransition(to: floatToGrayscaleUIColor(_2_t_3.elements[i])))
+        }
+    }
+    
+    @objc func updateOutputNeurons(notification: NSNotification){
+        guard let outNeurons = notification.object as? [Float] else {return}
+        guard let lastLayer = self.layers.last else {return}
+        for i in 0...lastLayer.count - 1{
+            lastLayer[i].run(SKAction.fillColorTransition(to: floatToGrayscaleUIColor(outNeurons[i])))
+        }
+    }
+    
+    @objc func updateInputNeurons(notification: NSNotification){
+        guard let img = notification.object as? UIImage else {return}
+        guard let tensor = Tensor<Float,CPU>(img) else {return}
+        guard let firstLayer = self.layers.first else {return}
+        for i in 0...firstLayer.count - 1{
+            firstLayer[i].run(SKAction.fillColorTransition(to: floatToGrayscaleUIColor(tensor.elements[i+300])))
+        }
+    }
+    
+    func floatToGrayscaleUIColor(_ float: Float)->UIColor{
+        let color = UIColor(white: CGFloat(float), alpha: 100)
+        return color
     }
     func dispatchAnimation(slide: Int){
         switch slide {
@@ -132,7 +189,7 @@ public class NNStructureScene: SKScene{
         case 6:
             self.showTweakWeightsChangeWeightColorAnimation()
         case 7:
-            self.animateAndAddInputImageDiagram()
+            print("no animation for this one, its done on swiftui!")
         case 8:
             print("no animation for this one :(")
         case 9:
@@ -491,7 +548,6 @@ public class NNStructureScene: SKScene{
         }
     }
     
-    
     ///show the equation to calcaulate a non-input neuron's value
     func showCalculateNeuronEquation(){
         self.endAllAnimations()
@@ -667,15 +723,6 @@ public class NNStructureScene: SKScene{
         })
     }
     
-    ///adds a diagram of the input 28by28 image
-    func animateAndAddInputImageDiagram(){
-        guard let firstNeuronLayer = self.layers.first else {
-            fatalError("um. where is the neural network??????")
-        }
-        for i in firstNeuronLayer{
-            i.run(SKAction.fillColorTransition(to: self.getRandomGrayscaleColor()))
-        }
-    }
     
     ///adds labels to each of the output neurons 0 - 9
     func addOutputLabels(){
@@ -693,20 +740,15 @@ public class NNStructureScene: SKScene{
     ///shows the neural network predicting MNIST in action.
     func animateAndRunMNIST(){
         self.endAllAnimations()
+        self.addOutputLabels()
     }
     
     ///let the user draw a number from 1-0 and show the model working to predict
     func letUserTestMNIST(){
-        self.endAllAnimations()
+        //dunno
     }
 }
 
-
-extension Notification.Name {
-   static var nnStructrueSceneAnimate: Notification.Name {
-       return Notification.Name("nnStructrueSceneAnimate")
-   }
-}
 
 public func shaderWithFilename( _ filename: String?, fileExtension: String?, uniforms: [SKUniform] ) -> SKShader {
         let path = Bundle.main.path( forResource: filename, ofType: fileExtension )
@@ -736,7 +778,7 @@ extension UIColor {
 }
 
 extension SKAction {
-    static func strokeColorTransition(to: UIColor, duration: Double = 0.4) -> SKAction{
+    static func strokeColorTransition(to: UIColor, duration: Double = 1) -> SKAction{
         return SKAction.customAction(withDuration: duration, actionBlock: { (node: SKNode!, elapsedTime: CGFloat) -> Void in
             guard let node = node as? SKShapeNode else { fatalError("storkeColorTransition is only available for SKShapeNode")}
             let fraction = CGFloat(elapsedTime / CGFloat(duration))
