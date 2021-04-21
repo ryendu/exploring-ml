@@ -1,6 +1,8 @@
 # Exploring ML
 *My WWDC 2021 swift student challenge submission showcasing the wonders of machine learning*
 
+Checkout the playground on [youtube](https://youtu.be/K9yRi89Ub5U) if you would not like to download and run.
+
 **Status - Submitted**
 
 Download the repository and open the playgroundbook file using swift playgrounds on iPad or on macOS to try it out!
